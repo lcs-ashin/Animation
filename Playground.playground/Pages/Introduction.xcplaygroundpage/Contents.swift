@@ -34,6 +34,8 @@ PlaygroundPage.current.liveView = canvas
  
  [Documentation](http://russellgordon.ca/CanvasGraphics/Documentation/) is available.
  */
+canvas.drawAxes(withScale: true)
+
 
 // Draw the six lines to start the design (bottom-left corner)
 canvas.drawAxes()
