@@ -55,6 +55,16 @@ for x in stride(from: 0, to: 300, by: 100) {
     }
 }
 
+
+// White circles
+canvas.fillColor = Color.white
+
+for x in stride(from: 0, to: 300, by: 100) {
+    for y in stride(from: 0, to: 300, by: 100) {
+        let size = Int.random(in: 30...70)
+        canvas.drawEllipse(at: Point(x: x + 50, y: y + 50), width: size, height: size)
+    }
+}
 /*:
  ## Show the Assistant Editor
  Don't see any results?

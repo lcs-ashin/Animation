@@ -8,5 +8,6 @@
         <page name='T-Shirt'/>
         <page name='Grid Forms'/>
         <page name='Grid Practice'/>
+        <page name='Grid Decisions'/>
     </pages>
 </playground>
