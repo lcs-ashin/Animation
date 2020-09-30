@@ -13,8 +13,6 @@
 		81064A111C130A10007ED524 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81064A0F1C130A10007ED524 /* Main.storyboard */; };
 		81064A1C1C132DA2007ED524 /* Sketch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81064A1B1C132DA2007ED524 /* Sketch.swift */; };
 		8134176A2199DBBA003676F3 /* CanvasLiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8188784E2199C7DF008CB375 /* CanvasLiveViewController.swift */; };
-		814ADAE7248D509900F80486 /* AudioKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 814ADAE4248D507000F80486 /* AudioKit.framework */; };
-		814ADAE8248D509900F80486 /* AudioKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 814ADAE4248D507000F80486 /* AudioKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		814ADAF1248E9F8200F80486 /* AudioAnalyser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814ADAE9248E655B00F80486 /* AudioAnalyser.swift */; };
 		814ADAF3248E9FDA00F80486 /* Sketchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814ADAF2248E9FDA00F80486 /* Sketchable.swift */; };
 		814ADAF5248EAB6A00F80486 /* TurtleSketch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814ADAF4248EAB6A00F80486 /* TurtleSketch.swift */; };
@@ -49,7 +47,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				814ADAE8248D509900F80486 /* AudioKit.framework in Embed Frameworks */,
 				818878422199C645008CB375 /* CanvasGraphics.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -66,8 +63,6 @@
 		81064A121C130A10007ED524 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		81064A1B1C132DA2007ED524 /* Sketch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sketch.swift; sourceTree = "<group>"; };
 		8134E7921C14CD5700EC4523 /* Playground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Playground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		814ADAE4248D507000F80486 /* AudioKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AudioKit.framework; sourceTree = "<group>"; };
-		814ADAE5248D507000F80486 /* AudioKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AudioKitUI.framework; sourceTree = "<group>"; };
 		814ADAE9248E655B00F80486 /* AudioAnalyser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioAnalyser.swift; sourceTree = "<group>"; };
 		814ADAF2248E9FDA00F80486 /* Sketchable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sketchable.swift; sourceTree = "<group>"; };
 		814ADAF4248EAB6A00F80486 /* TurtleSketch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurtleSketch.swift; sourceTree = "<group>"; };
@@ -124,7 +119,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				814ADAE7248D509900F80486 /* AudioKit.framework in Frameworks */,
 				818878412199C645008CB375 /* CanvasGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -143,7 +137,6 @@
 			isa = PBXGroup;
 			children = (
 				8134E7921C14CD5700EC4523 /* Playground.playground */,
-				814ADAE3248D506300F80486 /* AudioKit */,
 				818878472199C6A0008CB375 /* CanvasGraphics */,
 				81DBFBF622E96442005EDE85 /* Documentation */,
 				81064A081C130A10007ED524 /* Animation */,
@@ -188,15 +181,6 @@
 				814ADAF2248E9FDA00F80486 /* Sketchable.swift */,
 			);
 			name = Support;
-			sourceTree = "<group>";
-		};
-		814ADAE3248D506300F80486 /* AudioKit */ = {
-			isa = PBXGroup;
-			children = (
-				814ADAE4248D507000F80486 /* AudioKit.framework */,
-				814ADAE5248D507000F80486 /* AudioKitUI.framework */,
-			);
-			path = AudioKit;
 			sourceTree = "<group>";
 		};
 		814ADAE6248D509900F80486 /* Frameworks */ = {
@@ -437,7 +421,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0710;
-				LastUpgradeCheck = 1140;
+				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = "Royal St. George's College";
 				TargetAttributes = {
 					81064A051C130A10007ED524 = {
@@ -566,6 +550,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -621,6 +606,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;

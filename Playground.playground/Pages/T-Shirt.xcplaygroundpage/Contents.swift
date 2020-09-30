@@ -45,7 +45,7 @@ PlaygroundPage.current.liveView = canvas
  [Documentation](http://russellgordon.ca/CanvasGraphics/Documentation/) is available.
 
  */
-canvas.drawAxes(withScale: true)
+//canvas.drawAxes(withScale: true)
 
 // Dreamcatcher-head
 canvas.drawShapesWithFill = false
