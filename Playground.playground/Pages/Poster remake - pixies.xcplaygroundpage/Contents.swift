@@ -66,11 +66,10 @@ canvas.fillColor = limeGreen
 canvas.borderColor = limeGreen
 
 
-for x in stride(from: 0, to: 400, by: 40) {
-    for y in stride(from: 0, to: 400, by: 40) {
+for x in stride(from: 0, through: 400, by: 40) {
+    for y in stride(from: 400, through: 0, by: -40) {
        
         
-        canvas.drawEllipse(at: Point(x: x, y: y), width: 35, height: 35)
         // Set the fill
         if x == 0 {
             canvas.fillColor = limeGreen
@@ -80,10 +79,11 @@ for x in stride(from: 0, to: 400, by: 40) {
             canvas.fillColor = limeGreen
         } else if y == 400 {
             canvas.fillColor = limeGreen
-        } else {
+        } else if x + y == 400 && x != 0 && x != 400 {
             canvas.fillColor = offWhite
         }
-
+        
+        canvas.drawEllipse(at: Point(x: x, y: y), width: 35, height: 35)
         
         
         
