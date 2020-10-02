@@ -42,75 +42,29 @@ PlaygroundPage.current.liveView = canvas
  You can remove the code on line 49 and begin writing your own code.
  
  [Documentation](http://russellgordon.ca/CanvasGraphics/Documentation/) is available.
- 
- */
 
-// COLORS
+ */
 let pink = Color(hue: 338, saturation: 83, brightness: 89, alpha: 100)
 let black = Color(hue: 0, saturation: 0, brightness: 0, alpha: 100)
 let beige = Color(hue: 69, saturation: 6, brightness: 87, alpha: 100)
 
 
-// Background
 canvas.fillColor = pink
 canvas.drawRectangle(at: Point(x: 0, y: 0), width: 400, height: 600)
 
-// Squares
-canvas.fillColor = black
-canvas.drawShapesWithFill = false
 
-canvas.drawShapesWithBorders = true
-canvas.borderColor = pink
-
-
-// Bottom left corner
-for x in stride(from: 400, through: 0, by: -60) {
-    
-    x
-    
-
-    if x % 40 == 0 {
-        canvas.borderColor = black
+for x in stride(from: 400, through: 0, by: -50) {
+    if x % 100 == 0 {
+        canvas.fillColor = black
     } else {
-        canvas.borderColor = beige
+        canvas.fillColor = beige
     }
     
-    canvas.drawRectangle(at: Point(x: 0, y: 0),
-                         width: x,
-                         height: x,
-                         anchoredBy: AnchorPosition.centre, borderWidth: 15)
-    
-    
+    canvas.drawRectangle(at: Point(x: 0, y: 0), width: x - 50, height: x - 50, anchoredBy: AnchorPosition.centre)
+        
     
 }
 
-// Bottom right corner
-for x in stride(from: 0, through: 400, by: 60) {
-    
-    x
-    
-
-    if x % 40 == 0 {
-        canvas.borderColor = black
-    } else {
-        canvas.borderColor = beige
-    }
-    
-    canvas.drawRectangle(at: Point(x: 400, y: 0),
-                         width: x,
-                         height: x,
-                         anchoredBy: AnchorPosition.centre, borderWidth: 15)
-    
-    
-    
-}
-
-
-
-
-
-// Grid
-canvas.drawAxes(withScale: true, by: 50)
 /*:
  ## Show the Assistant Editor
  Don't see any results?
@@ -118,7 +72,7 @@ canvas.drawAxes(withScale: true, by: 50)
  Remember to show the Assistant Editor (1), and then switch to Live View (2):
  
  ![timeline](timeline.png "Timeline")
- 
+
  ## Use source control
  To keep your work organized, receive feedback, and earn a high grade in this course, regular use of source control is a must.
  
