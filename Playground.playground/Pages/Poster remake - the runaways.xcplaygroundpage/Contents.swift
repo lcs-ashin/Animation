@@ -45,6 +45,10 @@ PlaygroundPage.current.liveView = canvas
  
  */
 
+
+
+
+
 // COLORS
 let pink = Color(hue: 338, saturation: 83, brightness: 89, alpha: 100)
 let black = Color(hue: 0, saturation: 0, brightness: 0, alpha: 100)
@@ -54,6 +58,8 @@ let beige = Color(hue: 69, saturation: 6, brightness: 87, alpha: 100)
 // Background
 canvas.fillColor = pink
 canvas.drawRectangle(at: Point(x: 0, y: 0), width: 400, height: 600)
+
+
 
 // Squares
 canvas.fillColor = black
@@ -85,7 +91,7 @@ for x in stride(from: 400, through: 0, by: -60) {
 }
 
 // Bottom right corner
-for x in stride(from: 0, through: 400, by: 60) {
+for x in stride(from: 400, through: 0, by: -60) {
     
     x
     
@@ -105,12 +111,77 @@ for x in stride(from: 0, through: 400, by: 60) {
     
 }
 
+// Top right corner
+for x in stride(from: 400, through: 0, by: -60) {
+    
+    x
+    
+
+    if x % 40 == 0 {
+        canvas.borderColor = black
+    } else {
+        canvas.borderColor = beige
+    }
+    
+    canvas.drawRectangle(at: Point(x: 400, y: 400),
+                         width: x,
+                         height: x,
+                         anchoredBy: AnchorPosition.centre, borderWidth: 15)
+    
+    
+    
+}
+
+// Top left corner
+for x in stride(from: 400, through: 0, by: -60) {
+    
+    x
+    
+
+    if x % 40 == 0 {
+        canvas.borderColor = black
+    } else {
+        canvas.borderColor = beige
+    }
+    
+    canvas.drawRectangle(at: Point(x: 0, y: 400),
+                         width: x,
+                         height: x,
+                         anchoredBy: AnchorPosition.centre, borderWidth: 15)
+    
+    
+    
+}
 
 
 
+
+// Rectangle
+canvas.drawShapesWithFill = true
+canvas.fillColor = pink
+canvas.drawShapesWithBorders = false
+canvas.drawRectangle(at: Point(x: 0, y: 400), width: 400, height: 200)
+
+
+// Texts
+canvas.textColor = beige
+canvas.drawText(message: "the runaways", at: Point(x: 15, y: 410), size: 53, kerning: 0)
+
+canvas.textColor = black
+canvas.drawText(message: "friday", at: Point(x: 15, y: 550), size: 10, kerning: 0)
+canvas.drawText(message: "august 19 1977", at: Point(x: 15, y: 535), size: 10, kerning: 0)
+canvas.drawText(message: "tickets $4.50", at: Point(x: 15, y: 520), size: 10, kerning: 0)
+
+canvas.drawText(message: "with", at: Point(x: 110, y: 550), size: 10, kerning: 0)
+canvas.drawText(message: "special guests", at: Point(x: 110, y: 535), size: 10, kerning: 0)
+canvas.drawText(message: "wolfgang", at: Point(x: 110, y: 520), size: 10, kerning: 0)
+
+canvas.drawText(message: "at ben h. lewis hall", at: Point(x: 290, y: 550), size: 10, kerning: 0)
+canvas.drawText(message: "3443 orange st.", at: Point(x: 290, y: 535), size: 10, kerning: 0)
+canvas.drawText(message: "riverside, california", at: Point(x: 290, y: 520), size: 10, kerning: 0)
 
 // Grid
-canvas.drawAxes(withScale: true, by: 50)
+//canvas.drawAxes(withScale: true, by: 50)
 /*:
  ## Show the Assistant Editor
  Don't see any results?
