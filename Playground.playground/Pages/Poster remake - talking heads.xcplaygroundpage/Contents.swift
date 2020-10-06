@@ -96,6 +96,9 @@ canvas.drawText(message: "september 12, 13, 14, 1975", at: Point(x: 20, y: 15), 
 canvas.drawText(message: "at cbgb and emfug", at: Point(x: 150, y: 30), size: 10, kerning: 0)
 canvas.drawText(message: "315 bowery, new york city", at: Point(x: 150, y: 15), size: 10, kerning: 0)
 
+canvas.drawText(message: "also appearing:", at: Point(x: 280, y: 30), size: 10, kerning: 0)
+canvas.drawText(message: "from brooklyn, the shirts", at: Point(x: 280, y: 15), size: 10, kerning: 0)
+
 
 // Grid
 canvas.drawAxes(withScale: true, by: 50)
