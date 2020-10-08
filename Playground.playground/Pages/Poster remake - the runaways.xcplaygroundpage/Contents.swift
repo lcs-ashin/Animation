@@ -182,6 +182,8 @@ canvas.drawText(message: "riverside, california", at: Point(x: 290, y: 520), siz
 
 // Grid
 //canvas.drawAxes(withScale: true, by: 50)
+
+canvas.copyToClipboard()
 /*:
  ## Show the Assistant Editor
  Don't see any results?

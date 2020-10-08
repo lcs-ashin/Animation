@@ -153,10 +153,9 @@ canvas.drawText(message: "san diego, ca",
                 kerning: 0)
 
 // Grid
-canvas.drawAxes(withScale: true,
-                by: 50)
+//canvas.drawAxes(withScale: true,by: 50)
 
-
+canvas.copyToClipboard()
 /*:
  ## Show the Assistant Editor
  Don't see any results?

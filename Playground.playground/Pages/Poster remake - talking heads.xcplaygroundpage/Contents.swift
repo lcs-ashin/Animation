@@ -101,7 +101,9 @@ canvas.drawText(message: "from brooklyn, the shirts", at: Point(x: 280, y: 15), 
 
 
 // Grid
-canvas.drawAxes(withScale: true, by: 50)
+//canvas.drawAxes(withScale: true, by: 50)
+
+canvas.copyToClipboard()
 /*:
  ## Show the Assistant Editor
  Don't see any results?

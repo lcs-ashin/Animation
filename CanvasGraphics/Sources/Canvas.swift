@@ -682,7 +682,7 @@ public class Canvas : NSImageView, CustomPlaygroundDisplayConvertible {
     /// For example:
     ///
     /// ![axes](http://russellgordon.ca/CanvasGraphics/drawAxes_example.png)
-    public func drawAxes(withScale: Bool = false, by: Int = 50) {
+    public func drawAxes(withScale: Bool = false, by: Int = 50, color: Color = Color(hue: 0, saturation: 100, brightness: 0, alpha: 18)) {
         
         // Draw horizontal axis
         self.drawLine(from: Point(x: self.width * -10, y: 0), to: Point(x: self.width * 10, y: 0), capStyle: NSBezierPath.LineCapStyle.square)
@@ -706,7 +706,9 @@ public class Canvas : NSImageView, CustomPlaygroundDisplayConvertible {
         if withScale {
             
             let priorLineColor = self.lineColor
-            self.lineColor = Color(hue: 0, saturation: 100, brightness: 0, alpha: 18)
+            let priorTextColor = self.textColor
+            self.lineColor = color
+            self.textColor = color
             
             // Draw horizontal scale and grid
             for x in stride(from: horizontalStart * by, through: horizontalEnd * by, by: by) {
@@ -734,6 +736,7 @@ public class Canvas : NSImageView, CustomPlaygroundDisplayConvertible {
             
             // Restore line color
             self.lineColor = priorLineColor
+            self.textColor = priorTextColor
 
         }
         

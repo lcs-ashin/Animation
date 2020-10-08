@@ -115,9 +115,9 @@ canvas.drawText(message: "boston, mass.", at: Point(x: 280, y: 511), size: 10, k
 
 
 // Grid
-canvas.drawAxes(withScale: true, by: 50)
+//canvas.drawAxes(withScale: true, by: 50)
 
-
+canvas.copyToClipboard()
 /*:
  ## Show the Assistant Editor
  Don't see any results?
