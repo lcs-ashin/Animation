@@ -104,6 +104,8 @@ canvas.drawText(message: "october 14 1971/ 8 pm", at: Point(x: 300, y: 540), siz
 // Grid
 //canvas.defaultLineWidth = 1
 //canvas.drawAxes(withScale: true, by: 50, color: Color.white)
+
+canvas.copyToClipboard()
 /*:
  ## Show the Assistant Editor
  Don't see any results?
