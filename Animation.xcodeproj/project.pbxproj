@@ -31,6 +31,7 @@
 		8AC35D71253602E500126F8D /* MovingSquare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC35D70253602E400126F8D /* MovingSquare.swift */; };
 		8AC35D74253607C100126F8D /* FiveCircles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC35D73253607C100126F8D /* FiveCircles.swift */; };
 		8AC35D772538C6C300126F8D /* FourCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC35D762538C6C200126F8D /* FourCorners.swift */; };
+		8AC35D7A2538CEFB00126F8D /* BouncingCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC35D792538CEFB00126F8D /* BouncingCircle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -118,6 +119,7 @@
 		8AC35D70253602E400126F8D /* MovingSquare.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovingSquare.swift; sourceTree = "<group>"; };
 		8AC35D73253607C100126F8D /* FiveCircles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveCircles.swift; sourceTree = "<group>"; };
 		8AC35D762538C6C200126F8D /* FourCorners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourCorners.swift; sourceTree = "<group>"; };
+		8AC35D792538CEFB00126F8D /* BouncingCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BouncingCircle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +176,7 @@
 				8AC35D70253602E400126F8D /* MovingSquare.swift */,
 				8AC35D73253607C100126F8D /* FiveCircles.swift */,
 				8AC35D762538C6C200126F8D /* FourCorners.swift */,
+				8AC35D792538CEFB00126F8D /* BouncingCircle.swift */,
 			);
 			path = Animation;
 			sourceTree = "<group>";
@@ -497,6 +500,7 @@
 				814ADAFB248EB45F00F80486 /* AudioInputSketch.swift in Sources */,
 				814ADAF1248E9F8200F80486 /* AudioAnalyser.swift in Sources */,
 				814ADAF3248E9FDA00F80486 /* Sketchable.swift in Sources */,
+				8AC35D7A2538CEFB00126F8D /* BouncingCircle.swift in Sources */,
 				814ADAFD248EB56900F80486 /* EmptySketch.swift in Sources */,
 				814ADAFF248EB5E300F80486 /* StaticSketch.swift in Sources */,
 				8AC35D74253607C100126F8D /* FiveCircles.swift in Sources */,

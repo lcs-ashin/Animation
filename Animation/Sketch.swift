@@ -17,6 +17,7 @@ class Sketch: NSObject {
 //    var currentDrawing = AudioInputSketch()
 //    var currentDrawing = StaticSketch()
 //    var currentDrawing = FiveCircles()
-    var currentDrawing = FourCorners()
+//    var currentDrawing = FourCorners()
+    var currentDrawing = BouncingCircle()
 
 }
