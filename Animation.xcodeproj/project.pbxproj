@@ -30,6 +30,7 @@
 		81F935042476B0E000CD75D8 /* Tortoise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F935032476B0E000CD75D8 /* Tortoise.swift */; };
 		8AC35D71253602E500126F8D /* MovingSquare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC35D70253602E400126F8D /* MovingSquare.swift */; };
 		8AC35D74253607C100126F8D /* FiveCircles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC35D73253607C100126F8D /* FiveCircles.swift */; };
+		8AC35D772538C6C300126F8D /* FourCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC35D762538C6C200126F8D /* FourCorners.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -116,6 +117,7 @@
 		81F935032476B0E000CD75D8 /* Tortoise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tortoise.swift; sourceTree = "<group>"; };
 		8AC35D70253602E400126F8D /* MovingSquare.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovingSquare.swift; sourceTree = "<group>"; };
 		8AC35D73253607C100126F8D /* FiveCircles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveCircles.swift; sourceTree = "<group>"; };
+		8AC35D762538C6C200126F8D /* FourCorners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourCorners.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +173,7 @@
 				814ADAFC248EB56900F80486 /* EmptySketch.swift */,
 				8AC35D70253602E400126F8D /* MovingSquare.swift */,
 				8AC35D73253607C100126F8D /* FiveCircles.swift */,
+				8AC35D762538C6C200126F8D /* FourCorners.swift */,
 			);
 			path = Animation;
 			sourceTree = "<group>";
@@ -485,6 +488,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				81064A0C1C130A10007ED524 /* ViewController.swift in Sources */,
+				8AC35D772538C6C300126F8D /* FourCorners.swift in Sources */,
 				81064A1C1C132DA2007ED524 /* Sketch.swift in Sources */,
 				81064A0A1C130A10007ED524 /* AppDelegate.swift in Sources */,
 				814ADAF5248EAB6A00F80486 /* TurtleSketch.swift in Sources */,
