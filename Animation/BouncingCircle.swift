@@ -19,6 +19,7 @@ class BouncingCircle: NSObject, Sketchable {
     var x: Int
     var y : Int
     var dx : Int
+    var dy : Int
     
     // This function runs once
     override init() {
@@ -27,14 +28,22 @@ class BouncingCircle: NSObject, Sketchable {
         canvas = Canvas(width: 500, height: 500)
         
         // Set starting position
-        x = 250
-        y = 250
+        
+          // Random number
+        let point1 = Int.random(in: 0...500)
+        let point2 = Int.random(in: 0...500)
+       
+        x = point1
+        y = point2
         
         // Start moving to the right
         dx = 1
         
+        // Start moving up
+        dy = 1
+        
         // Slow down the animation
-        canvas.framesPerSecond = 50
+        canvas.framesPerSecond = 80
         
     }
     
@@ -45,7 +54,7 @@ class BouncingCircle: NSObject, Sketchable {
         
         // Change position
         x += dx
-        y += 1
+        y += dy
         
         // Draw an ellipse in the middle of the canvas
         let black = Color(hue: 0, saturation: 0, brightness: 0, alpha: 100)
@@ -54,10 +63,19 @@ class BouncingCircle: NSObject, Sketchable {
         canvas.fillColor = white
         canvas.drawRectangle(at: Point(x: 0, y: 0), width: 500, height: 500)
         
-        
+        if x > 500 {
+            dx = -1
+        } else if x < 0 {
+            dx = 1
+        } else if y > 500 {
+            dy = -1
+        } else if y < 0 {
+            dy = 1
+        }
         canvas.fillColor = black
         canvas.drawEllipse(at: Point(x: x, y: y), width: 50, height: 50)
         
-    }
     
+    
+}
 }
