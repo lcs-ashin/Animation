@@ -29,6 +29,8 @@
 		81A9FADD219A156E003E6502 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A9FADC219A156E003E6502 /* Color.swift */; };
 		81F935042476B0E000CD75D8 /* Tortoise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F935032476B0E000CD75D8 /* Tortoise.swift */; };
 		8A8D61012539D28E009BDDAA /* LinesFromCircles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8D61002539D28E009BDDAA /* LinesFromCircles.swift */; };
+		8A8D6104253B3E02009BDDAA /* RotationOfLines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8D6103253B3E02009BDDAA /* RotationOfLines.swift */; };
+		8A8D6107253DC13F009BDDAA /* MovingCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8D6106253DC13F009BDDAA /* MovingCircle.swift */; };
 		8AC35D71253602E500126F8D /* MovingSquare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC35D70253602E400126F8D /* MovingSquare.swift */; };
 		8AC35D74253607C100126F8D /* FiveCircles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC35D73253607C100126F8D /* FiveCircles.swift */; };
 		8AC35D772538C6C300126F8D /* FourCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC35D762538C6C200126F8D /* FourCorners.swift */; };
@@ -118,6 +120,8 @@
 		81DBFC2422E96442005EDE85 /* .tgz */ = {isa = PBXFileReference; lastKnownFileType = text; path = .tgz; sourceTree = "<group>"; };
 		81F935032476B0E000CD75D8 /* Tortoise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tortoise.swift; sourceTree = "<group>"; };
 		8A8D61002539D28E009BDDAA /* LinesFromCircles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinesFromCircles.swift; sourceTree = "<group>"; };
+		8A8D6103253B3E02009BDDAA /* RotationOfLines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotationOfLines.swift; sourceTree = "<group>"; };
+		8A8D6106253DC13F009BDDAA /* MovingCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovingCircle.swift; sourceTree = "<group>"; };
 		8AC35D70253602E400126F8D /* MovingSquare.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovingSquare.swift; sourceTree = "<group>"; };
 		8AC35D73253607C100126F8D /* FiveCircles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveCircles.swift; sourceTree = "<group>"; };
 		8AC35D762538C6C200126F8D /* FourCorners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourCorners.swift; sourceTree = "<group>"; };
@@ -180,6 +184,8 @@
 				8AC35D762538C6C200126F8D /* FourCorners.swift */,
 				8AC35D792538CEFB00126F8D /* BouncingCircle.swift */,
 				8A8D61002539D28E009BDDAA /* LinesFromCircles.swift */,
+				8A8D6103253B3E02009BDDAA /* RotationOfLines.swift */,
+				8A8D6106253DC13F009BDDAA /* MovingCircle.swift */,
 			);
 			path = Animation;
 			sourceTree = "<group>";
@@ -493,7 +499,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A8D6104253B3E02009BDDAA /* RotationOfLines.swift in Sources */,
 				81064A0C1C130A10007ED524 /* ViewController.swift in Sources */,
+				8A8D6107253DC13F009BDDAA /* MovingCircle.swift in Sources */,
 				8AC35D772538C6C300126F8D /* FourCorners.swift in Sources */,
 				81064A1C1C132DA2007ED524 /* Sketch.swift in Sources */,
 				81064A0A1C130A10007ED524 /* AppDelegate.swift in Sources */,

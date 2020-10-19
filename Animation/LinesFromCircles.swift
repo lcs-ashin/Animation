@@ -15,16 +15,9 @@ class LinesFromCircles: NSObject, Sketchable {
     //       Therefore, the line immediately below must always be present.
     var canvas: Canvas
     
-    // Position of circle
-    var x: Int
-    var y: Int
-    var dx: Int
-    var dy: Int
-    
-    var m: Int
-    var n: Int
-    var dm: Int
-    var dn: Int
+    // Create circles
+    var small: MovingCircle
+    var large: MovingCircle
     
     
     // This function runs once
@@ -34,27 +27,19 @@ class LinesFromCircles: NSObject, Sketchable {
         canvas = Canvas(width: 500, height: 500)
         
         // Set starting position
-        let point1 = Int.random(in: 0...500)
-        let point2 = Int.random(in: 0...500)
-        x = point1
-        y = point2
-        
-        let point3 = Int.random(in: 0...500)
-        let point4 = Int.random(in: 0...500)
-        m = point3
-        n = point4
-        
-        // Speed of the circles
-        
+        small = MovingCircle(x: Int.random(in: 0...500),
+                             y: Int.random(in: 0...500),
+                             dx: 1,
+                             dy: -1,
+                             size: 100)
        
-        
-        dx = 1
-        dy = -1
-        
+        large = MovingCircle(x: Int.random(in: 0...500),
+                             y: Int.random(in: 0...500),
+                             dx: 2,
+                             dy: -2,
+                             size: 250)
        
-        dm = -2
-        dn = 2
-        
+      
         // Slow down the animation
         canvas.framesPerSecond = 80
         
@@ -72,46 +57,15 @@ class LinesFromCircles: NSObject, Sketchable {
         if canvas.frameCount % 10 == 0 {
             canvas.drawRectangle(at: Point(x: 0, y: 0), width: 500, height: 500)
         }
-         // Change position
-        x += dx
-        y += dy
+         
         
-        m += dm
-        n += dn
-        
-        // Draw an ellipse in the middle of the canvas
-        canvas.drawShapesWithFill = false
-        canvas.drawShapesWithBorders = true
-        canvas.defaultBorderWidth = 2
-        // Bigger circle
-        if x > 500 {
-            dx = Int.random(in: 1...3) * -1
-        } else if x < 0 {
-            dx = Int.random(in: 1...3)
-        } else if y > 500 {
-            dy = Int.random(in: 1...3) * -1
-        } else if y < 0 {
-            dy = Int.random(in: 1...3)
-        }
-
-//        canvas.drawEllipse(at: Point(x: x, y: y), width: 250, height: 250)
-
-        // Smaller circle
-        if m > 500 {
-            dm = Int.random(in: 1...5) * -1
-        } else if m < 0 {
-            dm = Int.random(in: 1...5)
-        } else if n > 500 {
-            dn = Int.random(in: 1...5) * -1
-        } else if n < 0 {
-            dn = Int.random(in: 1...5)
-        }
-
-//        canvas.drawEllipse(at: Point(x: m, y: n), width: 100, height: 100)
+        // Draw updated circle
+        small.update(on: canvas)
+        large.update(on: canvas)
         
         // Calculate the distance between circles
-        let horizontal = x - m
-        let vertical = y - n
+        let horizontal = small.x - large.x
+        let vertical = small.y - large.y
         
         let d = sqrt(Double(horizontal * horizontal + vertical * vertical))
         
@@ -127,9 +81,9 @@ class LinesFromCircles: NSObject, Sketchable {
         canvas.lineColor = purple
         canvas.defaultLineWidth = 7
         
-        if d < 200 {
+        if d < 175 {
             
-            canvas.drawLine(from: Point(x: x, y: y), to: Point(x: m, y: n))
+            canvas.drawLine(from: Point(x: small.x, y: small.y), to: Point(x: large.x, y: large.y))
             
         }
     }

@@ -20,6 +20,8 @@ class Sketch: NSObject {
 //    var currentDrawing = FourCorners()
 //    var currentDrawing = BouncingCircle()
     var currentDrawing = LinesFromCircles()
+//    var currentDrawing = RotationOfLines()
+ 
 
 
 }
