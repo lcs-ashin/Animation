@@ -19,7 +19,11 @@ struct MovingCircle {
     var size: Int 
 
     // Initializer (automatically created)
+    
+    
     // Methods
+    
+    // Draw myself on the canvas
     mutating func update(on canvas: Canvas) {
         // Bounce at edge
         if x > 500 {
@@ -44,4 +48,19 @@ struct MovingCircle {
         canvas.drawEllipse(at: Point(x: x, y: y), width: size, height: size)
 
     }
+    
+    // Find my distance to the other circles
+    func distanceTo(other: MovingCircle) -> Double {
+        
+        // Calculate the distance between circles
+        let horizontal = self.x - other.x
+        let vertical = self.y - other.y
+        
+        let d = sqrt(Double(horizontal * horizontal + vertical * vertical))
+        
+        
+        
+        return d 
+    }
+    
 }

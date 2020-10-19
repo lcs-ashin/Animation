@@ -64,10 +64,8 @@ class LinesFromCircles: NSObject, Sketchable {
         large.update(on: canvas)
         
         // Calculate the distance between circles
-        let horizontal = small.x - large.x
-        let vertical = small.y - large.y
+        let d = small.distanceTo(other: large)
         
-        let d = sqrt(Double(horizontal * horizontal + vertical * vertical))
         
         // Map the distance between the circles to a brightness value
         let value = map(value: d, fromLower: 0, fromUpper: 175, toLower: 200, toUpper: 360)
