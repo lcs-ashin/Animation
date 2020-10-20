@@ -27,7 +27,7 @@ class LinesFromCircles: NSObject, Sketchable {
         canvas = Canvas(width: 500, height: 500)
         
         // Set starting position
-        for _ in 1...5 {
+        for _ in 1...10 {
             
             // Randomly pick a horizontal direction
             var dx = 1
@@ -46,7 +46,7 @@ class LinesFromCircles: NSObject, Sketchable {
                                         y: Int.random(in: 0...canvas.height),
                                         dx: dx,
                                         dy: dy,
-                                        size: 150))
+                                        size: 50))
             
         }
        
@@ -60,13 +60,13 @@ class LinesFromCircles: NSObject, Sketchable {
     func draw() {
         
         // White background
-        let white = Color.init(hue: 100, saturation: 0, brightness: 100, alpha: 5)
+        let white = Color.init(hue: 100, saturation: 0, brightness: 100, alpha: 100)
         canvas.drawShapesWithFill = true
         canvas.drawShapesWithBorders = false
         canvas.fillColor = white
 
        
-//        canvas.drawRectangle(at: Point(x: 0, y: 0), width: 500, height: 500)
+        canvas.drawRectangle(at: Point(x: 0, y: 0), width: 500, height: 500)
         
          
         
@@ -76,16 +76,24 @@ class LinesFromCircles: NSObject, Sketchable {
         }
         
         // Draw a line between circles when they overlap
-        circles[0].drawLineWhenOVerlapping(other: circles[1], on: canvas)
-        circles[0].drawLineWhenOVerlapping(other: circles[2], on: canvas)
-        circles[0].drawLineWhenOVerlapping(other: circles[3], on: canvas)
-        circles[0].drawLineWhenOVerlapping(other: circles[4], on: canvas)
-        circles[1].drawLineWhenOVerlapping(other: circles[2], on: canvas)
-        circles[1].drawLineWhenOVerlapping(other: circles[3], on: canvas)
-        circles[1].drawLineWhenOVerlapping(other: circles[4], on: canvas)
-        circles[2].drawLineWhenOVerlapping(other: circles[3], on: canvas)
-        circles[2].drawLineWhenOVerlapping(other: circles[4], on: canvas)
-        circles[3].drawLineWhenOVerlapping(other: circles[4], on: canvas)
+//        circles[0].drawLineWhenOVerlapping(other: circles[1], on: canvas)
+//        circles[0].drawLineWhenOVerlapping(other: circles[2], on: canvas)
+//        circles[0].drawLineWhenOVerlapping(other: circles[3], on: canvas)
+//        circles[0].drawLineWhenOVerlapping(other: circles[4], on: canvas)
+//        circles[1].drawLineWhenOVerlapping(other: circles[2], on: canvas)
+//        circles[1].drawLineWhenOVerlapping(other: circles[3], on: canvas)
+//        circles[1].drawLineWhenOVerlapping(other: circles[4], on: canvas)
+//        circles[2].drawLineWhenOVerlapping(other: circles[3], on: canvas)
+//        circles[2].drawLineWhenOVerlapping(other: circles[4], on: canvas)
+//        circles[3].drawLineWhenOVerlapping(other: circles[4], on: canvas)
+        
+        // loop for circles that do the checking
+        for i in 0...circles.count - 2 {
+            for j in i + 1...circles.count - 1 {
+//                print("i is \(i) and j is \(j)")
+                circles[i].drawLineWhenOVerlapping(other: circles[j], on: canvas)
+            }
+        }
     }
     
 }
