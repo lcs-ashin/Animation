@@ -29,17 +29,30 @@ class LinesFromCircles: NSObject, Sketchable {
         // Set starting position
         for _ in 1...2 {
             
-            circles.append(MovingCircle(x: Int.random(in: 0...500),
-                                        y: Int.random(in: 0...500),
-                                        dx: 1,
-                                        dy: -1,
-                                        size: 50))
+            // Randomly pick a horizontal direction
+            var dx = 1
+            if Bool.random() == true {
+                dx += -1
+            }
+            
+            // Randomly pick a vertical direction
+            var dy = 1
+            if Bool.random() == true {
+                dy += -1
+            }
+            
+            // Actually add the circles to the array
+            circles.append(MovingCircle(x: Int.random(in: 0...canvas.width),
+                                        y: Int.random(in: 0...canvas.height),
+                                        dx: dx,
+                                        dy: dy,
+                                        size: 150))
             
         }
        
       
         // Slow down the animation
-        canvas.framesPerSecond = 80
+        canvas.framesPerSecond = 40
         
     }
     
@@ -47,7 +60,7 @@ class LinesFromCircles: NSObject, Sketchable {
     func draw() {
         
         // White background
-        let white = Color.init(hue: 100, saturation: 0, brightness: 100, alpha: 100)
+        let white = Color.init(hue: 100, saturation: 0, brightness: 100, alpha: 5)
         canvas.drawShapesWithFill = true
         canvas.drawShapesWithBorders = false
         canvas.fillColor = white
@@ -57,7 +70,7 @@ class LinesFromCircles: NSObject, Sketchable {
         
          
         
-        // Draw updated circle
+        // Draw updated circles
         for circle in circles {
             circle.update(on: canvas)
         }

@@ -52,7 +52,7 @@ class MovingCircle {
         canvas.drawShapesWithBorders = true
         canvas.defaultBorderWidth = 2
         
-        canvas.drawEllipse(at: Point(x: x, y: y), width: size, height: size)
+//        canvas.drawEllipse(at: Point(x: x, y: y), width: size, height: size)
 
     }
     
