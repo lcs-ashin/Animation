@@ -27,7 +27,7 @@ class LinesFromCircles: NSObject, Sketchable {
         canvas = Canvas(width: 500, height: 500)
         
         // Set starting position
-        for _ in 1...4 {
+        for _ in 1...5 {
             
             // Randomly pick a horizontal direction
             var dx = 1
@@ -79,9 +79,13 @@ class LinesFromCircles: NSObject, Sketchable {
         circles[0].drawLineWhenOVerlapping(other: circles[1], on: canvas)
         circles[0].drawLineWhenOVerlapping(other: circles[2], on: canvas)
         circles[0].drawLineWhenOVerlapping(other: circles[3], on: canvas)
+        circles[0].drawLineWhenOVerlapping(other: circles[4], on: canvas)
         circles[1].drawLineWhenOVerlapping(other: circles[2], on: canvas)
         circles[1].drawLineWhenOVerlapping(other: circles[3], on: canvas)
+        circles[1].drawLineWhenOVerlapping(other: circles[4], on: canvas)
         circles[2].drawLineWhenOVerlapping(other: circles[3], on: canvas)
+        circles[2].drawLineWhenOVerlapping(other: circles[4], on: canvas)
+        circles[3].drawLineWhenOVerlapping(other: circles[4], on: canvas)
     }
     
 }
