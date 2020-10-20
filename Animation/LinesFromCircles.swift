@@ -27,18 +27,18 @@ class LinesFromCircles: NSObject, Sketchable {
         canvas = Canvas(width: 500, height: 500)
         
         // Set starting position
-        for _ in 1...3 {
+        for _ in 1...4 {
             
             // Randomly pick a horizontal direction
             var dx = 1
             if Bool.random() == true {
-                dx += -1
+                dx *= -1
             }
             
             // Randomly pick a vertical direction
             var dy = 1
             if Bool.random() == true {
-                dy += -1
+                dy *= -1
             }
             
             // Actually add the circles to the array
@@ -78,7 +78,10 @@ class LinesFromCircles: NSObject, Sketchable {
         // Draw a line between circles when they overlap
         circles[0].drawLineWhenOVerlapping(other: circles[1], on: canvas)
         circles[0].drawLineWhenOVerlapping(other: circles[2], on: canvas)
+        circles[0].drawLineWhenOVerlapping(other: circles[3], on: canvas)
         circles[1].drawLineWhenOVerlapping(other: circles[2], on: canvas)
+        circles[1].drawLineWhenOVerlapping(other: circles[3], on: canvas)
+        circles[2].drawLineWhenOVerlapping(other: circles[3], on: canvas)
     }
     
 }
