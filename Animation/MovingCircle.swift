@@ -9,7 +9,7 @@
 import Foundation
 import CanvasGraphics
 
-struct MovingCircle {
+class MovingCircle {
   
     // Properties
     var x: Int
@@ -18,13 +18,20 @@ struct MovingCircle {
     var dy: Int
     var size: Int 
 
-    // Initializer (automatically created)
+    // Initializer
+    init (x: Int, y: Int, dx: Int, dy: Int, size: Int) {
+        self.x = x
+        self.y = y
+        self.dx = dx
+        self.dy = dy
+        self.size = size
+    }
     
     
     // Methods
     
     // Draw myself on the canvas
-    mutating func update(on canvas: Canvas) {
+     func update(on canvas: Canvas) {
         // Bounce at edge
         if x > 500 {
             dx = Int.random(in: 1...3) * -1
