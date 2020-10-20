@@ -27,7 +27,7 @@ class LinesFromCircles: NSObject, Sketchable {
         canvas = Canvas(width: 500, height: 500)
         
         // Set starting position
-        for _ in 1...50 {
+        for _ in 1...2 {
             
             circles.append(MovingCircle(x: Int.random(in: 0...500),
                                         y: Int.random(in: 0...500),
@@ -62,27 +62,8 @@ class LinesFromCircles: NSObject, Sketchable {
             circle.update(on: canvas)
         }
         
-//        // Calculate the distance between circles
-//        let d = small.distanceTo(other: large)
-//
-//
-//        // Map the distance between the circles to a brightness value
-//        let value = map(value: d, fromLower: 0, fromUpper: 175, toLower: 200, toUpper: 360)
-//        let value2 = map(value: d, fromLower: 0, fromUpper: 175, toLower: 40, toUpper: 80)
-//        let saturation = map(value: d, fromLower: 50, fromUpper: 175, toLower: 100, toUpper: 240)
-//
-////        print(brightness)
-//
-//        // Draw a line
-//        let purple = Color(hue: Int(value), saturation: Int(saturation), brightness: 100, alpha: Int(value2))
-//        canvas.lineColor = purple
-//        canvas.defaultLineWidth = 7
-//
-//        if d < 175 {
-//
-//            canvas.drawLine(from: Point(x: small.x, y: small.y), to: Point(x: large.x, y: large.y))
-//
-//        }
+        // Draw a line between circles when they overlap
+        circles[0].drawLineWhenOVerlapping(other: circles[1], on: canvas)
     }
     
 }

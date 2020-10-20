@@ -70,4 +70,33 @@ class MovingCircle {
         return d 
     }
     
+    // Draw a line when I overlap another circle
+    func drawLineWhenOVerlapping(other: MovingCircle, on canvas: Canvas) {
+    
+        // Calculate the distance between circles
+        let distance = self.distanceTo(other: other )
+        
+        // Calculate the sum of the radii
+        let radiiSum = Double(self.size / 2 + other.size / 2)
+        
+        // Calculate the diagonal length of the canvas
+        let diagonal = sqrt(Double(canvas.width * canvas.width + canvas.height * canvas.height))
+        
+        // When the distance is greater than the sum of the radii of the circles... draw a line
+        if distance > radiiSum {
+            
+            // Map the distance between the circles to a hue
+            let hue = map(value: distance, fromLower: radiiSum, fromUpper: diagonal - radiiSum, toLower: 200, toUpper: 360)
+    
+   
+           // Set properties of line
+           let purple = Color(hue: Int(hue), saturation: 80, brightness: 90, alpha: 25)
+           canvas.lineColor = purple
+           canvas.defaultLineWidth = 7
+            
+            // Acrually draw the line
+            canvas.drawLine(from: Point(x: self.x, y: self.y), to: Point(x: other.x, y: other.y))
+   
+           }
+    }
 }
