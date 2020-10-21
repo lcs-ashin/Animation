@@ -52,7 +52,7 @@ class MovingCircle {
         canvas.drawShapesWithBorders = true
         canvas.defaultBorderWidth = 2
         
-       canvas.drawEllipse(at: Point(x: x, y: y), width: size, height: size)
+//       canvas.drawEllipse(at: Point(x: x, y: y), width: size, height: size)
 
     }
     
@@ -86,7 +86,7 @@ class MovingCircle {
         if distance < radiiSum {
             
             // Map the distance between the circles to a hue
-            let hue = map(value: distance, fromLower: radiiSum, fromUpper: diagonal - radiiSum, toLower: 200, toUpper: 360)
+            let hue = map(value: distance, fromLower: radiiSum, fromUpper: diagonal - radiiSum, toLower: 260, toUpper: 280)
     
    
            // Set properties of line
