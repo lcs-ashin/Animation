@@ -27,7 +27,7 @@ class LinesFromCircles: NSObject, Sketchable {
         canvas = Canvas(width: 500, height: 500)
         
         // Set starting position
-        for _ in 1...60 {
+        for _ in 1...80 {
             
             // Randomly pick a horizontal direction
             var dx = 1
