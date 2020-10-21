@@ -86,11 +86,11 @@ class MovingCircle {
         if distance < radiiSum {
             
             // Map the distance between the circles to a hue
-            let hue = map(value: distance, fromLower: radiiSum, fromUpper: diagonal - radiiSum, toLower: 260, toUpper: 280)
+            let hue = map(value: distance, fromLower: radiiSum, fromUpper: diagonal - radiiSum, toLower: 35, toUpper: 120)
     
    
            // Set properties of line
-           let purple = Color(hue: Int(hue), saturation: 80, brightness: 90, alpha: 25)
+           let purple = Color(hue: Int(hue), saturation: 50, brightness: 100, alpha: 60)
            canvas.lineColor = purple
            canvas.defaultLineWidth = 7
             

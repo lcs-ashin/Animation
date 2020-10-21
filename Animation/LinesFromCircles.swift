@@ -52,18 +52,18 @@ class LinesFromCircles: NSObject, Sketchable {
        
       
         // Slow down the animation
-        canvas.framesPerSecond = 40
+        canvas.framesPerSecond = 30
         
     }
     
     // This function runs repeatedly, forever, to create the animated effect
     func draw() {
         
-        // White background
-        let white = Color.init(hue: 100, saturation: 0, brightness: 100, alpha: 100)
+        // Black background
+        let black = Color.init(hue: 280, saturation: 100, brightness: 0, alpha: 25)
         canvas.drawShapesWithFill = true
         canvas.drawShapesWithBorders = false
-        canvas.fillColor = white
+        canvas.fillColor = black
 
        
         canvas.drawRectangle(at: Point(x: 0, y: 0), width: 500, height: 500)
