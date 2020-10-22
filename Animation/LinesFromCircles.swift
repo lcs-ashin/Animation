@@ -17,7 +17,7 @@ class LinesFromCircles: NSObject, Sketchable {
     
     // Create circles
     // Creating an empty array
-    var circles: [MovingCircle] = []
+    var circles: [ElementOne] = []
     
     
     // This function runs once
@@ -27,7 +27,7 @@ class LinesFromCircles: NSObject, Sketchable {
         canvas = Canvas(width: 500, height: 500)
         
         // Set starting position
-        for _ in 1...80 {
+        for _ in 1...2 {
             
             // Randomly pick a horizontal direction
             var dx = 1
@@ -42,11 +42,11 @@ class LinesFromCircles: NSObject, Sketchable {
             }
             
             // Actually add the circles to the array
-            circles.append(MovingCircle(x: Int.random(in: 0...canvas.width),
+            circles.append(ElementOne(x: Int.random(in: 0...canvas.width),
                                         y: Int.random(in: 0...canvas.height),
                                         dx: dx,
                                         dy: dy,
-                                        size: 100))
+                                        size: 200))
             
         }
        
@@ -63,7 +63,7 @@ class LinesFromCircles: NSObject, Sketchable {
         let black = Color.init(hue: 280, saturation: 100, brightness: 0, alpha: 25)
         canvas.drawShapesWithFill = true
         canvas.drawShapesWithBorders = false
-        canvas.fillColor = black
+        canvas.fillColor = Color.white 
 
        
         canvas.drawRectangle(at: Point(x: 0, y: 0), width: 500, height: 500)
@@ -74,6 +74,8 @@ class LinesFromCircles: NSObject, Sketchable {
         for circle in circles {
             circle.update(on: canvas)
         }
+        
+        circles[0].changeDirectionWhenOverlapping(other: circles[1])
         
         // Draw a line between circles when they overlap
 //        circles[0].drawLineWhenOVerlapping(other: circles[1], on: canvas)
@@ -87,13 +89,13 @@ class LinesFromCircles: NSObject, Sketchable {
 //        circles[2].drawLineWhenOVerlapping(other: circles[4], on: canvas)
 //        circles[3].drawLineWhenOVerlapping(other: circles[4], on: canvas)
         
-        // loop for circles that do the checking
-        for i in 0...circles.count - 2 {
-            for j in i + 1...circles.count - 1 {
-//                print("i is \(i) and j is \(j)")
-                circles[i].drawLineWhenOVerlapping(other: circles[j], on: canvas)
-            }
-        }
+//        // loop for circles that do the checking
+//        for i in 0...circles.count - 2 {
+//            for j in i + 1...circles.count - 1 {
+////                print("i is \(i) and j is \(j)")
+//                circles[i].drawLineWhenOVerlapping(other: circles[j], on: canvas)
+//            }
+//        }
     }
     
 }
