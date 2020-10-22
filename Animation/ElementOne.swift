@@ -110,11 +110,11 @@ class ElementOne {
         // Calculate the sum of the radii
         let radiiSum = Double(self.size / 2 + other.size / 2)
         
-       
-      
         if distance < radiiSum {
-            dx = Int.random(in: 1...3) * -1
-            dy = Int.random(in: 1...3) * -1
+            dx *= -1
+            dy *= -1
+            other.dx *= -1
+            other.dy *= -1
         }
     }
 }

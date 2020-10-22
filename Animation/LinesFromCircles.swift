@@ -27,7 +27,7 @@ class LinesFromCircles: NSObject, Sketchable {
         canvas = Canvas(width: 500, height: 500)
         
         // Set starting position
-        for _ in 1...2 {
+        for _ in 1...49 {
             
             // Randomly pick a horizontal direction
             var dx = 1
@@ -46,7 +46,7 @@ class LinesFromCircles: NSObject, Sketchable {
                                         y: Int.random(in: 0...canvas.height),
                                         dx: dx,
                                         dy: dy,
-                                        size: 200))
+                                        size: 25))
             
         }
        
@@ -75,7 +75,13 @@ class LinesFromCircles: NSObject, Sketchable {
             circle.update(on: canvas)
         }
         
-        circles[0].changeDirectionWhenOverlapping(other: circles[1])
+        // Change direction when they overlap
+        for i in 0...circles.count - 2 {
+            for j in i + 1...circles.count - 1 {
+                circles[i].changeDirectionWhenOverlapping(other: circles[j])
+            }
+        }
+       
         
         // Draw a line between circles when they overlap
 //        circles[0].drawLineWhenOVerlapping(other: circles[1], on: canvas)
