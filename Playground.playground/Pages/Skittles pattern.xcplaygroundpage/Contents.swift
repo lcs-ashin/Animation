@@ -49,43 +49,78 @@ var x: Int
 var y: Int
 
 // Make a grid
-canvas.drawAxes(withScale: true, by: 50, color: Color.black)
+canvas.drawAxes(withScale: true,
+                by: 50,
+                color: Color.black)
 
 // Vertical lines
 canvas.lineColor = Color.red
 canvas.defaultLineWidth = 5
 
-for x in stride(from: 0, through: 300, by: 50) {
-    for y in stride(from: 0, through: 300, by: 50) {
-    if Bool.random() == true {
-        if y % 100 == 50 {
-        canvas.drawLine(from: Point(x: x, y: y), to: Point(x: x, y: y + 50))
+// loop 7 times
+for x in stride(from: 0,
+                through: 300,
+                by: 50) {
+    
+    // Generate the random 0 or 1
+    let randomValue = Bool.random()
+    
+    // When the randomValue is 1 ( or true) we draw first
+    if randomValue == true {
+        
+        // Draw the line first, then go every other
+        for y in stride(from: 50,
+                        through: 250,
+                        by: 100) {
+        
+            canvas.drawLine(from: Point(x: x, y: y),
+                            to: Point(x: x, y: y + 50))
         }
-    } else {
-        if y % 100 == 0 {
-        canvas.drawLine(from: Point(x: x, y: y), to: Point(x: x, y: y + 50))
-        }
+        } else {
+            
+            // Draw a gap first, then go every other
+            for y in stride(from: 0,
+                            through: 300,
+                            by: 100) {
+                
+                canvas.drawLine(from: Point(x: x, y: y),
+                                to: Point(x: x, y: y + 50))
+            }
+        
     }
-  }
+    
 }
 
 // Horizontal lines
 canvas.lineColor = Color.green
 canvas.defaultLineWidth = 5
 
-for x in stride(from: 0, through: 300, by: 50) {
-    for y in stride(from: 0, through: 300, by: 50) {
-    if Bool.random() == true {
-        if x % 100 == 50 {
-        canvas.drawLine(from: Point(x: x, y: y), to: Point(x: x + 50, y: y))
+for y in stride(from: 0,
+                through: 300,
+                by: 50) {
+    
+    let randomValue = Bool.random()
+    
+    if randomValue == true {
+        
+        for x in stride(from: 50,
+                        through: 250,
+                        by: 100) {
+            
+        canvas.drawLine(from: Point(x: x, y: y),
+                        to: Point(x: x + 50, y: y))
         }
     } else {
-        if x % 100 == 0 {
-        canvas.drawLine(from: Point(x: x, y: y), to: Point(x: x + 50, y: y))
+        for x in stride(from: 0,
+                        through: 300,
+                        by: 100) {
+            
+        canvas.drawLine(from: Point(x: x, y: y),
+                        to: Point(x: x + 50, y: y))
         }
     }
   }
-}
+
 
 
   
