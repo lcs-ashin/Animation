@@ -57,10 +57,11 @@ canvas.drawAxes(withScale: true,
 canvas.lineColor = Color.red
 canvas.defaultLineWidth = 5
 
-// loop 7 times
+// loop to create the horizontal
+let cellSize = 25
 for x in stride(from: 0,
                 through: 300,
-                by: 50) {
+                by: cellSize) {
     
     // Generate the random 0 or 1
     let randomValue = Bool.random()
@@ -71,20 +72,20 @@ for x in stride(from: 0,
         // Draw the line first, then go every other
         for y in stride(from: 50,
                         through: 250,
-                        by: 100) {
+                        by: cellSize * 2) {
         
             canvas.drawLine(from: Point(x: x, y: y),
-                            to: Point(x: x, y: y + 50))
+                            to: Point(x: x, y: y + cellSize))
         }
         } else {
             
             // Draw a gap first, then go every other
             for y in stride(from: 0,
                             through: 300,
-                            by: 100) {
+                            by: cellSize * 2) {
                 
                 canvas.drawLine(from: Point(x: x, y: y),
-                                to: Point(x: x, y: y + 50))
+                                to: Point(x: x, y: y + cellSize))
             }
         
     }
@@ -97,7 +98,7 @@ canvas.defaultLineWidth = 5
 
 for y in stride(from: 0,
                 through: 300,
-                by: 50) {
+                by: cellSize) {
     
     let randomValue = Bool.random()
     
@@ -105,18 +106,18 @@ for y in stride(from: 0,
         
         for x in stride(from: 50,
                         through: 250,
-                        by: 100) {
+                        by: cellSize * 2) {
             
         canvas.drawLine(from: Point(x: x, y: y),
-                        to: Point(x: x + 50, y: y))
+                        to: Point(x: x + cellSize, y: y))
         }
     } else {
         for x in stride(from: 0,
                         through: 300,
-                        by: 100) {
+                        by: cellSize * 2) {
             
         canvas.drawLine(from: Point(x: x, y: y),
-                        to: Point(x: x + 50, y: y))
+                        to: Point(x: x + cellSize, y: y))
         }
     }
   }

@@ -19,8 +19,9 @@ class Sketch: NSObject {
 //    var currentDrawing = FiveCircles()
 //    var currentDrawing = FourCorners()
 //    var currentDrawing = BouncingCircle()
-    var currentDrawing = LinesFromCircles()
+//    var currentDrawing = LinesFromCircles()
 //    var currentDrawing = RotationOfLines()
+    var currentDrawing = Skittles()
  
 
 
