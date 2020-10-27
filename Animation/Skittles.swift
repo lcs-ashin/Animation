@@ -20,7 +20,7 @@ class Skittles: NSObject, Sketchable {
     override init() {
         
         // Create canvas object – specify size
-        canvas = Canvas(width: 300, height: 300)
+        canvas = Canvas(width: 500, height: 500)
         
         canvas.framesPerSecond = 1
         
@@ -30,16 +30,16 @@ class Skittles: NSObject, Sketchable {
     func draw() {
         
         canvas.fillColor = Color.white
-        canvas.drawRectangle(at: Point(x: 0, y: 0), width: 300, height: 300)
+        canvas.drawRectangle(at: Point(x: 0, y: 0), width: 500, height: 500)
         
         // Vertical lines
-        canvas.lineColor = Color.red
+        canvas.lineColor = Color.purple
         canvas.defaultLineWidth = 3
         
         // loop to create the vertical
         let cellSize = 10
         for x in stride(from: 0,
-                        through: 300,
+                        through: 500,
                         by: cellSize) {
             
             // Generate the random 0 or 1
@@ -50,7 +50,7 @@ class Skittles: NSObject, Sketchable {
                 
                 // Draw the line first, then go every other
                 for y in stride(from: cellSize,
-                                through: 250,
+                                through: 500 - cellSize,
                                 by: cellSize * 2) {
                     
                     canvas.drawLine(from: Point(x: x, y: y),
@@ -60,7 +60,7 @@ class Skittles: NSObject, Sketchable {
                 
                 // Draw a gap first, then go every other
                 for y in stride(from: 0,
-                                through: 300,
+                                through: 500,
                                 by: cellSize * 2) {
                     
                     canvas.drawLine(from: Point(x: x, y: y),
@@ -72,11 +72,11 @@ class Skittles: NSObject, Sketchable {
         }
         
         // Horizontal lines
-        canvas.lineColor = Color.green
-        canvas.defaultLineWidth = 5
+        canvas.lineColor = Color.blue
+        canvas.defaultLineWidth = 3
         
         for y in stride(from: 0,
-                        through: 300,
+                        through: 500,
                         by: cellSize) {
             
             let randomValue = Bool.random()
@@ -84,7 +84,7 @@ class Skittles: NSObject, Sketchable {
             if randomValue == true {
                 
                 for x in stride(from: cellSize,
-                                through: 250,
+                                through: 500 - cellSize,
                                 by: cellSize * 2) {
                     
                     canvas.drawLine(from: Point(x: x, y: y),
@@ -92,7 +92,7 @@ class Skittles: NSObject, Sketchable {
                 }
             } else {
                 for x in stride(from: 0,
-                                through: 300,
+                                through: 500,
                                 by: cellSize * 2) {
                     
                     canvas.drawLine(from: Point(x: x, y: y),
