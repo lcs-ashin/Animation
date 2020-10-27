@@ -33,11 +33,11 @@ class Skittles: NSObject, Sketchable {
         canvas.drawRectangle(at: Point(x: 0, y: 0), width: 500, height: 500)
         
         // Vertical lines
-        canvas.lineColor = Color.purple
-        canvas.defaultLineWidth = 3
+        canvas.lineColor = Color.orange
+        canvas.defaultLineWidth = 1
         
         // loop to create the vertical
-        let cellSize = 10
+        let cellSize = 5
         for x in stride(from: 0,
                         through: 500,
                         by: cellSize) {
@@ -72,8 +72,8 @@ class Skittles: NSObject, Sketchable {
         }
         
         // Horizontal lines
-        canvas.lineColor = Color.blue
-        canvas.defaultLineWidth = 3
+        canvas.lineColor = Color(hue: 320, saturation: 100, brightness: 100, alpha: 100)
+        canvas.defaultLineWidth = 1
         
         for y in stride(from: 0,
                         through: 500,
