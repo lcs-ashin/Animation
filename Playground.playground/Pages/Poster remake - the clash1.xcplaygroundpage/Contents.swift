@@ -70,42 +70,54 @@ vertices.append(Point(x: 243, y: 380)) // end
 
 canvas.drawCustomShape(with: vertices)
 
-// Lines in loop
-canvas.lineColor = offWhite
+
 canvas.defaultLineWidth = 12
 
+
+
+canvas.drawShapesWithBorders = true
+canvas.borderColor = offWhite
+canvas.defaultBorderWidth = 12
+canvas.drawShapesWithFill = false
+
 for x in stride(from: 0, through: 210, by: 35) {
+  
+    var vertices2: [Point] = []
+    vertices2.append(Point(x: 230, y: 380 + x))
+    vertices2.append(Point(x: 230 - x, y: 380))
+    vertices2.append(Point(x: 230, y: 380 - x))
+    vertices2.append(Point(x: 230 + x, y: 380))
 
-    canvas.drawLine(from: Point(x: 230, y: 380 + x), to: Point(x: 230 - x, y: 380))
-    canvas.drawLine(from: Point(x: 230 - x, y: 380), to: Point(x: 230, y: 380 - x))
-    canvas.drawLine(from: Point(x: 230, y: 380 - x), to: Point(x: 230 + x, y: 380))
-    canvas.drawLine(from: Point(x: 230 + x, y: 380), to: Point(x: 230, y: 380 + x))
-
+    canvas.drawCustomShape(with: vertices2)
 }
-
 // Blue squares
 
 // Centre
 canvas.fillColor = blue
-var vertices2: [Point] = [] // empty list of vertices
-vertices2.append(Point(x: 170, y: 393)) // start
-vertices2.append(Point(x: 157, y: 380))
-vertices2.append(Point(x: 170, y: 367))
-vertices2.append(Point(x: 183, y: 380)) // end
+canvas.drawShapesWithBorders = false
+canvas.drawShapesWithFill = true
+var vertices3: [Point] = [] // empty list of vertices
+vertices3.append(Point(x: 170, y: 393)) // start
+vertices3.append(Point(x: 157, y: 380))
+vertices3.append(Point(x: 170, y: 367))
+vertices3.append(Point(x: 183, y: 380)) // end
 
-canvas.drawCustomShape(with: vertices2)
+canvas.drawCustomShape(with: vertices3)
 
-// Lines in loop
-canvas.lineColor = blue
-canvas.defaultLineWidth = 12
+// Borders
 
+canvas.borderColor = blue
+canvas.drawShapesWithFill = false
+canvas.drawShapesWithBorders = true
 for x in stride(from: 0, through: 210, by: 35) {
+  
+    var vertices4: [Point] = []
+    vertices4.append(Point(x: 170, y: 380 + x))
+    vertices4.append(Point(x: 170 - x, y: 380))
+    vertices4.append(Point(x: 170, y: 380 - x))
+    vertices4.append(Point(x: 170 + x, y: 380))
 
-    canvas.drawLine(from: Point(x: 170, y: 380 + x), to: Point(x: 170 - x, y: 380))
-    canvas.drawLine(from: Point(x: 170 - x, y: 380), to: Point(x: 170, y: 380 - x))
-    canvas.drawLine(from: Point(x: 170, y: 380 - x), to: Point(x: 170 + x, y: 380))
-    canvas.drawLine(from: Point(x: 170 + x, y: 380), to: Point(x: 170, y: 380 + x))
-
+    canvas.drawCustomShape(with: vertices4)
 }
 
 
