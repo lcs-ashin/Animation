@@ -139,20 +139,24 @@ for x in stride(from: 0,
 }
 
 // Texts
+canvas.textColor = Color.black
+
 canvas.drawText(message: "the clash", at: Point(x: 20, y: 400), size: 60, kerning: 0)
 
-canvas.drawText(message: "$2.25 / friday", at: Point(x: 20, y: 670), size: 7, kerning: 0)
-canvas.drawText(message: "december 22 1978", at: Point(x: 20, y: 655), size: 7, kerning: 0)
+canvas.drawText(message: "$2.25 / friday", at: Point(x: 20, y: 570), size: 7, kerning: 0)
+canvas.drawText(message: "december 22 1978", at: Point(x: 20, y: 555), size: 7, kerning: 0)
 
-canvas.drawText(message: "christmas party", at: Point(x: 100, y: 670), size: 7, kerning: 0)
-canvas.drawText(message: "with the slits and the innocents", at: Point(x: 100, y: 655), size: 7, kerning: 0)
+canvas.drawText(message: "christmas party", at: Point(x: 100, y: 570), size: 7, kerning: 0)
+canvas.drawText(message: "with the slits and the innocents", at: Point(x: 100, y: 555), size: 7, kerning: 0)
 
-canvas.drawText(message: "friars aylesbury at maxwell hall", at: Point(x: 250, y: 670), size: 7, kerning: 0)
-canvas.drawText(message: "aylesbury, buckinghamshire, england", at: Point(x: 250, y: 655), size: 7, kerning: 0)
+canvas.drawText(message: "friars aylesbury at maxwell hall", at: Point(x: 250, y: 570), size: 7, kerning: 0)
+canvas.drawText(message: "aylesbury, buckinghamshire, england", at: Point(x: 250, y: 555), size: 7, kerning: 0)
 
 
 // Grid
-canvas.drawAxes(withScale: true, by: 50, color: Color.white)
+//canvas.drawAxes(withScale: true, by: 50, color: Color.white)
+
+canvas.copyToClipboard()
 
 /*:
  ## Show the Assistant Editor
