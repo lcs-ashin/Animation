@@ -63,29 +63,27 @@ for x in stride(from: 50, through: 350, by: 100) {
     for y in stride(from: 50, through: 350, by: 100) {
         
        canvas.fillColor = brown
-        canvas.drawEllipse(at: Point(x: x, y: y - 30), width: 50, height: 50)
+        canvas.drawEllipse(at: Point(x: x, y: y - 3), width: 50, height: 50)
         
         canvas.lineColor = brown
         canvas.defaultLineWidth = 5
-        canvas.drawLine(from: Point(x: x + 21, y: y - 36), to: Point(x: x + 7, y: y - 63))
+        canvas.drawLine(from: Point(x: x + 21, y: y - 9), to: Point(x: x + 7, y: y - 36))
         
         canvas.fillColor = lightBrown
-        canvas.drawEllipse(at: Point(x: x, y: y + 10), width: 50, height: 50)
+        canvas.drawEllipse(at: Point(x: x, y: y + 37), width: 50, height: 50)
     }
 }
 
-//// Triangles
-//canvas.drawShapesWithFill = false
-//canvas.drawShapesWithBorders = true
-//for x in stride(from: 0, through: 100, by: 25) {
-//
-//var vertices: [Point] = []
-//vertices.append(Point(x: 400 - x, y: x))
-//vertices.append(Point(x: 400 - x, y: 400 - x))
-//vertices.append(Point(x: x, y: x))
-//canvas.drawCustomShape(with: vertices)
-    
-//}
+// Texts
+canvas.textColor = mustard
+canvas.drawText(message: "Semicolon;", at: Point(x: 29, y: 420), size: 60, kerning: 0)
+
+canvas.textColor = blue
+canvas.drawText(message: "Semicolon;", at: Point(x: 27, y: 420), size: 60, kerning: 0)
+
+canvas.textColor = brown
+canvas.drawText(message: "Semicolon;", at: Point(x: 25, y: 420), size: 60, kerning: 0)
+
 // Grid
 canvas.defaultLineWidth = 1
 canvas.drawAxes(withScale: true, by: 50, color: brown)
