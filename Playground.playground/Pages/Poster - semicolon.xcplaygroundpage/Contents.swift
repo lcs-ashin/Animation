@@ -112,6 +112,8 @@ canvas.drawText(message: "special album", at: Point(x: 310, y: 550), size: 10, k
 //canvas.defaultLineWidth = 1
 //canvas.drawAxes(withScale: true, by: 50, color: brown)
 
+canvas.copyToClipboard()
+
 /*:
  ## Show the Assistant Editor
  Don't see any results?
