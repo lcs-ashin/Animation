@@ -61,7 +61,9 @@ for x in stride(from: 25, through: 385, by: 36) {
     
         
         canvas.fillColor = translucentYellow
-        canvas.drawEllipse(at: Point(x: x, y: y), width: 7, height: 7)
+        canvas.drawEllipse(at: Point(x: x, y: y),
+                           width: (385 / (36 / 3) + 14) - (x / (36 / 3) + 7),
+                           height: (385 / (36 / 3) + 14) - (x / (36 / 3) + 7))
         
     }
 }
@@ -71,10 +73,16 @@ for x in stride(from: 25, through: 385, by: 36) {
 // Pink Circles
 
 for x in stride(from: 15, through: 375, by: 36) {
+    
+    x
+    
+    
     for y in stride(from: 215, through: 585, by: 36) {
     
         canvas.fillColor = translucentPink
-        canvas.drawEllipse(at: Point(x: x, y: y), width: 7, height: 7)
+        canvas.drawEllipse(at: Point(x: x, y: y),
+                           width: (375 / (36 / 3) + 14) - (x / (36 / 3) + 7),
+                           height: (375 / (36 / 3) + 14) - (x / (36 / 3) + 7))
         
     }
 }
@@ -85,7 +93,9 @@ for x in stride(from: 20, through: 380, by: 36) {
     for y in stride(from: 224, through: 600, by: 36) {
     
         canvas.fillColor = translucentBlue
-        canvas.drawEllipse(at: Point(x: x, y: y), width: 7, height: 7)
+        canvas.drawEllipse(at: Point(x: x, y: y),
+                           width: (380 / (36 / 3) + 14) - (x / (36 / 3) + 7),
+                           height: (380 / (36 / 3) + 14) - (x / (36 / 3) + 7))
     }
 }
 
