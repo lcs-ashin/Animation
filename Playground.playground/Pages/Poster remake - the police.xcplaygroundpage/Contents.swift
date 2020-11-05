@@ -100,7 +100,19 @@ for x in stride(from: 20, through: 380, by: 36) {
 }
 
 // Texts
-canvas.drawText(message: "the police", at: Point(x: 20, y: 140), size: 60, kerning: 0)
+canvas.drawText(message: "the police", at: Point(x: 15, y: 120), size: 60, kerning: 0)
+canvas.drawText(message: "friday & saturday", at: Point(x: 15, y: 40), size: 9, kerning: 0)
+canvas.drawText(message: "october 20 & 21 1978", at: Point(x: 15, y: 25), size: 9, kerning: 0)
+
+
+canvas.drawText(message: "at cbgb and omfug", at: Point(x: 110, y: 40), size: 9, kerning: 0)
+canvas.drawText(message: "315 bowery at bleeker / new york city", at: Point(x: 110, y: 25), size: 9, kerning: 0)
+
+canvas.drawText(message: "two nights", at: Point(x: 290, y: 40), size: 9, kerning: 0)
+canvas.drawText(message: "first u.s. appearance!", at: Point(x: 290, y: 25), size: 9, kerning: 0)
+
+
+
 
 
 // Grid
