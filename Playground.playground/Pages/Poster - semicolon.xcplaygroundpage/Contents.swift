@@ -30,7 +30,7 @@ import PlaygroundSupport
 import CanvasGraphics
 
 // Create canvas
-let canvas = Canvas(width: preferredWidth, height: preferredHeight)
+let canvas = Canvas(width: preferredWidth, height: preferredHeight, quality: Quality.Ultra)
 
 // Show the canvas in the playground's live view
 PlaygroundPage.current.liveView = canvas
