@@ -62,8 +62,8 @@ for x in stride(from: 25, through: 385, by: 36) {
         
         canvas.fillColor = translucentYellow
         canvas.drawEllipse(at: Point(x: x, y: y),
-                           width: (385 / (36 / 3) + 14) - (x / (36 / 3) + 7),
-                           height: (385 / (36 / 3) + 14) - (x / (36 / 3) + 7))
+                           width: (160000 / (36 * 140) + 5) - ((x * (y - 200)) / (36 * 140)),
+                           height: (160000 / (36 * 140) + 5) - ((x * (y - 200)) / (36 * 140)))
         
     }
 }
@@ -81,8 +81,8 @@ for x in stride(from: 15, through: 375, by: 36) {
     
         canvas.fillColor = translucentPink
         canvas.drawEllipse(at: Point(x: x, y: y),
-                           width: (375 / (36 / 3) + 14) - (x / (36 / 3) + 7),
-                           height: (375 / (36 / 3) + 14) - (x / (36 / 3) + 7))
+                           width: (160000 / (36 * 140) + 5) - ((x * (y - 200)) / (36 * 140)),
+                           height: (160000 / (36 * 140) + 5) - ((x * (y - 200)) / (36 * 140)))
         
     }
 }
@@ -94,10 +94,13 @@ for x in stride(from: 20, through: 380, by: 36) {
     
         canvas.fillColor = translucentBlue
         canvas.drawEllipse(at: Point(x: x, y: y),
-                           width: (380 / (36 / 3) + 14) - (x / (36 / 3) + 7),
-                           height: (380 / (36 / 3) + 14) - (x / (36 / 3) + 7))
+                           width: (160000 / (36 * 140) + 5) - ((x * (y - 200)) / (36 * 140)),
+                           height: (160000 / (36 * 140) + 5) - ((x * (y - 200)) / (36 * 140)))
     }
 }
+
+// Texts
+canvas.drawText(message: "the police", at: Point(x: 20, y: 140), size: 60, kerning: 0)
 
 
 // Grid
