@@ -119,6 +119,8 @@ canvas.drawText(message: "first u.s. appearance!", at: Point(x: 290, y: 25), siz
 canvas.defaultLineWidth = 1
 canvas.drawAxes(withScale: true, by: 50, color: almostBlack)
 
+
+canvas.copyToClipboard()
 /*:
  ## Show the Assistant Editor
  Don't see any results?
