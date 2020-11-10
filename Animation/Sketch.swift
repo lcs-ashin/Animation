@@ -21,7 +21,8 @@ class Sketch: NSObject {
 //    var currentDrawing = BouncingCircle()
 //    var currentDrawing = LinesFromCircles()
 //    var currentDrawing = RotationOfLines()
-    var currentDrawing = Skittles()
+//    var currentDrawing = Skittles()
+      var currentDrawing = Spiral()
  
 
 

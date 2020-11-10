@@ -18,16 +18,58 @@ class IndividualSpiral {
     //
     //    A property is something that descibes the item.
     //    e.g.: A student at LCS has a house, a hair color, a height
-    
+    var lastPoint: Point
+    var angleOffset: Int
     
     // 1. Initializer
     //
     //    An initializer has one job: give each property an initial
     //    value
+    init(angleOffset: Int) {
+        
+        // I want every spiral to begin at the same position
+        self.lastPoint = Point(x: 0, y: 0)
+        
+        // Each spiral begins at a slightly different angle
+        self.angleOffset = angleOffset
+        
+    }
     
     // 3. Methods
     //
     // Here we describe what behaviour we want to have happen.
+    func update(on canvas: Canvas) {
+       
+        // Start drawing after the first frame
+        if canvas.frameCount > 0 {
+
+            // Set the radius
+            let radius = CGFloat(canvas.frameCount) / 1
+
+            // Set the angle equal to the frameCount
+            let angle = CGFloat(canvas.frameCount + 0)
+
+            // Determine the next x position
+            let nextX = cos(angle.asRadians()) * radius
+
+            // Determine the next y position
+            let nextY = sin(angle.asRadians()) * radius
+        
+            // Set the next point
+            let nextPoint = Point(x: nextX, y: nextY)
+//            print(nextPoint)
+            
+
+            // Draw a line from the last point to the next point
+            canvas.drawLine(from: lastPoint, to: nextPoint)
+            
+
+            // Set the "new" last point, now that the line is drawn
+            lastPoint = nextPoint
+
+        }
+     
+    }
     
     
 }
