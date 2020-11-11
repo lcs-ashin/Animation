@@ -20,12 +20,14 @@ class IndividualSpiral {
     //    e.g.: A student at LCS has a house, a hair color, a height
     var lastPoint: Point
     var angleOffset: Int
+    var hue: Float
+    var thickness: Int
     
     // 1. Initializer
     //
     //    An initializer has one job: give each property an initial
     //    value
-    init(angleOffset: Int) {
+    init(angleOffset: Int, hue: Float, thickness: Int) {
         
         // I want every spiral to begin at the same position
         self.lastPoint = Point(x: 0, y: 0)
@@ -33,6 +35,11 @@ class IndividualSpiral {
         // Each spiral begins at a slightly different angle
         self.angleOffset = angleOffset
         
+        // Set the hue
+        self.hue = hue
+        
+        // Set the thickness
+        self.thickness = thickness
     }
     
     // 3. Methods
@@ -50,20 +57,29 @@ class IndividualSpiral {
             let angle = CGFloat(canvas.frameCount + angleOffset)
 
             // Determine the next x position
-            let nextX = cos(angle.asRadians()) * radius
+            let nextX = cos(angle.asRadians() * -1) * radius
 
             // Determine the next y position
-            let nextY = sin(angle.asRadians()) * radius
+            let nextY = sin(angle.asRadians() * -1) * radius
         
             // Set the next point
             let nextPoint = Point(x: nextX, y: nextY)
 //            print(nextPoint)
             
+            // Set the line color
+            canvas.lineColor = Color(hue: hue,
+                                     saturation: 80,
+                                     brightness: 90,
+                                     alpha: 100)
+            
+            // Set the thickness
+            canvas.defaultLineWidth = thickness
+            
+            
 
             // Draw a line from the last point to the next point
             canvas.drawLine(from: lastPoint, to: nextPoint)
             
-
             // Set the "new" last point, now that the line is drawn
             lastPoint = nextPoint
 
