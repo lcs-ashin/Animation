@@ -47,7 +47,7 @@ class IndividualSpiral {
             let radius = CGFloat(canvas.frameCount) / 1
 
             // Set the angle equal to the frameCount
-            let angle = CGFloat(canvas.frameCount + 0)
+            let angle = CGFloat(canvas.frameCount + angleOffset)
 
             // Determine the next x position
             let nextX = cos(angle.asRadians()) * radius
