@@ -22,12 +22,14 @@ class IndividualSpiral {
     var angleOffset: Int
     var hue: Float
     var thickness: Int
+    var clockwise: Bool
+    var delayInFrame: Int
     
     // 1. Initializer
     //
     //    An initializer has one job: give each property an initial
     //    value
-    init(angleOffset: Int, hue: Float, thickness: Int) {
+    init(angleOffset: Int, hue: Float, thickness: Int, clockwise: Bool, delayInFrame: Int) {
         
         // I want every spiral to begin at the same position
         self.lastPoint = Point(x: 0, y: 0)
@@ -40,6 +42,11 @@ class IndividualSpiral {
         
         // Set the thickness
         self.thickness = thickness
+        
+        // Set the clock direction
+        self.clockwise = clockwise
+        
+        self.delayInFrame = delayInFrame
     }
     
     // 3. Methods
@@ -48,19 +55,26 @@ class IndividualSpiral {
     func update(on canvas: Canvas) {
        
         // Start drawing after the first frame
-        if canvas.frameCount > 0 {
+        if canvas.frameCount > delayInFrame {
 
             // Set the radius
-            let radius = CGFloat(canvas.frameCount) / 1
+            let radius = CGFloat(canvas.frameCount - delayInFrame) / 1
 
             // Set the angle equal to the frameCount
-            let angle = CGFloat(canvas.frameCount + angleOffset)
+            let angle = CGFloat(canvas.frameCount - delayInFrame + angleOffset)
 
+            
+            // Set the direction of opening
+            var direction: CGFloat = 1
+            if clockwise == true {
+                direction = -1
+            }
+            
             // Determine the next x position
-            let nextX = cos(angle.asRadians() * -1) * radius
+            let nextX = cos(angle.asRadians() * direction) * radius
 
             // Determine the next y position
-            let nextY = sin(angle.asRadians() * -1) * radius
+            let nextY = sin(angle.asRadians() * direction) * radius
         
             // Set the next point
             let nextPoint = Point(x: nextX, y: nextY)

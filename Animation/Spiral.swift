@@ -11,7 +11,7 @@ import CanvasGraphics
 // NOTE: This is a completely empty sketch; it can be used as a template.
 class Spiral: NSObject, Sketchable {
     
-
+    
     // NOTE: Every sketch must contain an object of type Canvas named 'canvas'
     //       Therefore, the line immediately below must always be present.
     var canvas: Canvas
@@ -19,38 +19,54 @@ class Spiral: NSObject, Sketchable {
     // Add many spirals
     // This is now a list, or an array, of spirals
     var spirals: [IndividualSpiral] = []    // empty list
-  
+    
     // This function runs once
     override init() {
         
         // Create canvas object – specify size
         canvas = Canvas(width: 500, height: 500)
-                
+        
         
         // Initialize many spirals
         for i in 1...18 {
-          
-            // Give the one spiral a starting angle of rotation
-                  let spiral = IndividualSpiral(angleOffset: i * 20,
-                                                hue: 230 + Float(i) * 7,
-                                                thickness: i * 2 + 20)
             
-            // Add the new spiral to the list
-            spirals.append(spiral)
+            // Give the one spiral a starting angle of rotation
+            if i % 2 == 0 {
+                
+                let spiral = IndividualSpiral(angleOffset: i * 20,
+                                              hue: 100 + Float(i) * 5,
+                                              thickness: 3,
+                                              clockwise: true,
+                                              delayInFrame: i * 10)
+                
+                // Add the new spiral to the list
+                spirals.append(spiral)
+            } else {
+                
+                let spiral = IndividualSpiral(angleOffset: i * 20,
+                                              hue: 100 + Float(i) * 5,
+                                              thickness: 3,
+                                              clockwise: false,
+                                              delayInFrame: i * 20)
+                
+                // Add the new spiral to the list
+                spirals.append(spiral)
+                
+            }
         }
-       
+        
         
         // Speed
         canvas.framesPerSecond = 80
     }
     
-
+    
     // This function runs repeatedly, forever, to create the animated effect
     func draw() {
         
-
+        
         // What frame are we on?
-//        print(canvas.frameCount)
+        //        print(canvas.frameCount)
         
         canvas.defaultLineWidth = 1
         
@@ -63,5 +79,5 @@ class Spiral: NSObject, Sketchable {
         }
     }
     
-
+    
 }
