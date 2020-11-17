@@ -22,7 +22,9 @@ class Sketch: NSObject {
 //    var currentDrawing = LinesFromCircles()
 //    var currentDrawing = RotationOfLines()
 //    var currentDrawing = Skittles()
-      var currentDrawing = Spiral()
+//    var currentDrawing = Spiral()
+    var currentDrawing = FunctionArt1()
+
  
 
 

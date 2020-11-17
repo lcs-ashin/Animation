@@ -31,6 +31,8 @@
 		8A194DE62542099400243E14 /* ElementOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A194DE52542099300243E14 /* ElementOne.swift */; };
 		8A605F0425599F1F00E9C09A /* Spiral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A605F0325599F1F00E9C09A /* Spiral.swift */; };
 		8A605F072559A06900E9C09A /* IndividualSpiral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A605F062559A06900E9C09A /* IndividualSpiral.swift */; };
+		8A605F0A25642F8000E9C09A /* MathFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A605F0925642F8000E9C09A /* MathFunction.swift */; };
+		8A605F0D2564354400E9C09A /* FunctionArt1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A605F0C2564354400E9C09A /* FunctionArt1.swift */; };
 		8A8D61012539D28E009BDDAA /* LinesFromCircles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8D61002539D28E009BDDAA /* LinesFromCircles.swift */; };
 		8A8D6104253B3E02009BDDAA /* RotationOfLines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8D6103253B3E02009BDDAA /* RotationOfLines.swift */; };
 		8A8D6107253DC13F009BDDAA /* MovingCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8D6106253DC13F009BDDAA /* MovingCircle.swift */; };
@@ -126,6 +128,8 @@
 		8A194DE52542099300243E14 /* ElementOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementOne.swift; sourceTree = "<group>"; };
 		8A605F0325599F1F00E9C09A /* Spiral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spiral.swift; sourceTree = "<group>"; };
 		8A605F062559A06900E9C09A /* IndividualSpiral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndividualSpiral.swift; sourceTree = "<group>"; };
+		8A605F0925642F8000E9C09A /* MathFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathFunction.swift; sourceTree = "<group>"; };
+		8A605F0C2564354400E9C09A /* FunctionArt1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionArt1.swift; sourceTree = "<group>"; };
 		8A8D61002539D28E009BDDAA /* LinesFromCircles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinesFromCircles.swift; sourceTree = "<group>"; };
 		8A8D6103253B3E02009BDDAA /* RotationOfLines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotationOfLines.swift; sourceTree = "<group>"; };
 		8A8D6106253DC13F009BDDAA /* MovingCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovingCircle.swift; sourceTree = "<group>"; };
@@ -198,6 +202,8 @@
 				8AB3C4AE25487889009113AB /* Skittles.swift */,
 				8A605F0325599F1F00E9C09A /* Spiral.swift */,
 				8A605F062559A06900E9C09A /* IndividualSpiral.swift */,
+				8A605F0925642F8000E9C09A /* MathFunction.swift */,
+				8A605F0C2564354400E9C09A /* FunctionArt1.swift */,
 			);
 			path = Animation;
 			sourceTree = "<group>";
@@ -516,6 +522,8 @@
 				8A8D6107253DC13F009BDDAA /* MovingCircle.swift in Sources */,
 				8AC35D772538C6C300126F8D /* FourCorners.swift in Sources */,
 				8AB3C4AF25487889009113AB /* Skittles.swift in Sources */,
+				8A605F0D2564354400E9C09A /* FunctionArt1.swift in Sources */,
+				8A605F0A25642F8000E9C09A /* MathFunction.swift in Sources */,
 				81064A1C1C132DA2007ED524 /* Sketch.swift in Sources */,
 				8A605F0425599F1F00E9C09A /* Spiral.swift in Sources */,
 				81064A0A1C130A10007ED524 /* AppDelegate.swift in Sources */,
