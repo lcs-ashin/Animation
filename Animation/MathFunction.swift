@@ -23,6 +23,7 @@ class MathFunction {
     var k: CGFloat  // Horizontal stretch / compression / reflection
     var d: CGFloat  // Horizontal shift
     var c: CGFloat  // Vertical shift
+    var hue: Float
     
     
     // 1. Initializer
@@ -33,17 +34,19 @@ class MathFunction {
          k: CGFloat,
          d: CGFloat,
          c: CGFloat,
-         canvas: Canvas) {
+         canvas: Canvas,
+         hue: Float) {
         
         // I want every function to begin off the left side at the canvas
         self.lastPoint = Point(x: -1 * canvas.width / 2 - 5,
-                               y: 0)
+                               y: canvas.height)
         
        // Initiallize all properties
         self.a = a
         self.k = k
         self.d = d
         self.c = c
+        self.hue = hue
         
     }
     
@@ -71,7 +74,7 @@ class MathFunction {
 //            print(nextPoint)
             
             // Set the line color
-            canvas.lineColor = Color(hue: 0,
+            canvas.lineColor = Color(hue: hue,
                                      saturation: 80,
                                      brightness: 90,
                                      alpha: 100)
