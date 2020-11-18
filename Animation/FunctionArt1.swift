@@ -28,15 +28,16 @@ class FunctionArt1: NSObject, Sketchable {
         
         
         // Initialize many spirals
-        for i in 1...10{
+        for i in 1...20{
             
             // Create the function
-            let newFunction = MathFunction(a: 1.0,
-                                           k: 10.0 + CGFloat(i),
-                                           d: 0.0,
-                                           c: 0.0,
+            let newFunction = MathFunction(a: 20.0 - 2 * CGFloat(i),
+                                           k: 5.0,
+                                           d: 25.0 * CGFloat(i) - CGFloat(canvas.width / 2),
+                                           c: 5.0,
                                            canvas: canvas,
-                                           hue: Float(i) * 18)
+                                           hue: 130 + Float(i) * 10,
+                                           type: .absoluteValue)
             
             // Add ot to the list
             functions.append(newFunction)
