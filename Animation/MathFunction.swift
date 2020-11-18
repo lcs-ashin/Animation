@@ -38,8 +38,8 @@ class MathFunction {
          hue: Float) {
         
         // I want every function to begin off the left side at the canvas
-        self.lastPoint = Point(x: -1 * canvas.width / 2 - 5,
-                               y: canvas.height)
+        self.lastPoint = Point(x: CGFloat(-1 * canvas.width / 2 - 5),
+                               y: 0.0)
         
        // Initiallize all properties
         self.a = a
