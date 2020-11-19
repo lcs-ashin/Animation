@@ -65,7 +65,8 @@ class FunctionArt1: NSObject, Sketchable {
         
         // Update the position of that one spiral
         for function in functions {
-            function.update(on: canvas)
+            function.update(on: canvas,
+                            usingInputValue: canvas.frameCount)
         }
     }
     

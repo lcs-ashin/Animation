@@ -68,10 +68,10 @@ class MathFunction {
     // 3. Methods
     //
     // Here we describe what behaviour we want to have happen.
-    func update(on canvas: Canvas) {
+    func update(on canvas: Canvas, usingInputValue x: Int) {
        
         // Start drawing after the first frame
-        if canvas.frameCount > 0 && canvas.frameCount < canvas.width {
+        if x > 0 && x < canvas.width {
 
            
             
