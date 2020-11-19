@@ -19,6 +19,7 @@ enum FunctionType {
     case absoluteValue
     case exponential
     case reciprocal
+    case sine
 }
 
 // Define a class that creates a mathmatical function
@@ -85,7 +86,7 @@ class MathFunction {
            
             
             // Determine the next x position
-            let nextX: CGFloat = CGFloat(x - canvas.width / 2)
+            let nextX: Degrees = Degrees(x - canvas.width / 2)
 
             // Determine the next y position
             var nextY: CGFloat = 0.0
@@ -106,6 +107,8 @@ class MathFunction {
                 nextY = a * exp((nextX - d) / k) + c
             case .reciprocal:
                 nextY = a * 1.0/((nextX - d) / k) + c
+            case .sine:
+                nextY = a * sin((nextX.asRadians() - d) / k) + c
             }
            
         

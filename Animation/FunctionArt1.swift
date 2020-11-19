@@ -37,7 +37,7 @@ class FunctionArt1: NSObject, Sketchable {
                                            c: 5.0,
                                            canvas: canvas,
                                            hue: 130 + Float(i) * 10,
-                                           type: .absoluteValue)
+                                           type: .sine)
             
             // Add ot to the list
             functions.append(newFunction)
@@ -47,7 +47,7 @@ class FunctionArt1: NSObject, Sketchable {
         
         
         // Speed
-        canvas.framesPerSecond = 1
+        canvas.framesPerSecond = 60
     }
     
     
@@ -82,7 +82,11 @@ class FunctionArt1: NSObject, Sketchable {
             // Update the position of that one spiral
             for function in functions {
                 
-                function.c = CGFloat(newC)
+                // function.c = CGFloat(newC)
+                
+                // Gradually change the vertical stretch / compression
+                function.a = 200.0 * sin(Degrees(canvas.frameCount).asRadians() / 0.5)
+                
                 function.update(on: canvas,
                                 usingInputValue: x)
             }
