@@ -69,6 +69,15 @@ class MathFunction {
     //
     // Here we describe what behaviour we want to have happen.
     func update(on canvas: Canvas, usingInputValue x: Int) {
+        
+        // Make sure each re-draw of all the functions begins off-screen
+        if x == 0 {
+            
+            // I want every function to begin off the left side at the canvas
+            self.lastPoint = Point(x: CGFloat(-1 * canvas.width / 2 - 5),
+                                   y: 0.0)
+
+        }
        
         // Start drawing after the first frame
         if x > 0 && x < canvas.width {
