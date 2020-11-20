@@ -74,7 +74,7 @@ class FunctionArt1: NSObject, Sketchable {
         canvas.translate(to: Point(x: canvas.width / 2, y: canvas.height / 2))
        
         // Randomly change the vertical position
-        let newC = Int.random(in: -150...150)
+        // let newC = Int.random(in: -150...150)
         
         // Draw the entire list of functions all at once
         for x in 0...canvas.width {
