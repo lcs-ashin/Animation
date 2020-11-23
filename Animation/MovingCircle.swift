@@ -71,7 +71,7 @@ class MovingCircle {
     }
     
     // Draw a line when I overlap another circle
-    func drawLineWhenOVerlapping(other: MovingCircle, on canvas: Canvas) {
+    func drawLineWhenOverlapping(other: MovingCircle, on canvas: Canvas) {
     
         // Calculate the distance between circles
         let distance = self.distanceTo(other: other )

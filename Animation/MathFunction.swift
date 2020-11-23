@@ -34,9 +34,14 @@ class MathFunction {
     //    e.g.: A student at LCS has a house, a hair color, a height
     var lastPoint: Point
     var a: CGFloat  // Vertical stretch / compression / reflection
+    var a2: CGFloat  // Vertical stretch / compression / reflection
     var k: CGFloat  // Horizontal stretch / compression / reflection
+    var k2: CGFloat  // Horizontal stretch / compression / reflection
     var d: CGFloat  // Horizontal shift
+    var d2: CGFloat  // Horizontal shift
     var c: CGFloat  // Vertical shift
+    var c2: CGFloat  // Vertical shift
+    
     var hue: Float
     var type: FunctionType // Tell us what shape / math function to use
     var delayInSeconds: Int // How much of a delay to have before the aniamtion begins
@@ -53,17 +58,25 @@ class MathFunction {
          canvas: Canvas,
          hue: Float,
          type: FunctionType,
-         delayInSeconds: Int = 0) {
+         delayInSeconds: Int = 0,
+         a2: CGFloat = 1.0,
+         k2: CGFloat = 1.0,
+         d2: CGFloat = 0.0,
+         c2: CGFloat = 0.0) {
         
         // I want every function to begin off the left side at the canvas
         self.lastPoint = Point(x: CGFloat(-1 * canvas.width / 2 - 5),
                                y: 0.0)
         
-       // Initiallize all properties
+        // Initiallize all properties
         self.a = a
         self.k = k
         self.d = d
         self.c = c
+        self.a2 = a2
+        self.k2 = k2
+        self.d2 = d2
+        self.c2 = c2
         self.hue = hue
         self.type = type
         self.delayInSeconds = delayInSeconds
@@ -117,7 +130,7 @@ class MathFunction {
                 case .sine:
                     nextY = a * sin((nextX.asRadians() - d) / k) + c
                 case .linearSine:
-                    nextY = a * sin((nextX.asRadians() - d) / k) + c + a * ((nextX - d) / k) + c
+                    nextY = a * sin((nextX.asRadians() - d) / k) + c +  a2 * ((nextX - d2) / k2) + c2
                 }
                 
                 
@@ -143,7 +156,7 @@ class MathFunction {
             }
         }
         
-     
+        
     }
     
     
