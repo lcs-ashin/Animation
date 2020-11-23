@@ -20,6 +20,7 @@ enum FunctionType {
     case exponential
     case reciprocal
     case sine
+    case linearSine
 }
 
 // Define a class that creates a mathmatical function
@@ -115,6 +116,8 @@ class MathFunction {
                     nextY = a * 1.0/((nextX - d) / k) + c
                 case .sine:
                     nextY = a * sin((nextX.asRadians() - d) / k) + c
+                case .linearSine:
+                    nextY = a * sin((nextX.asRadians() - d) / k) + c + a * ((nextX - d) / k) + c
                 }
                 
                 
