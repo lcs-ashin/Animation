@@ -27,6 +27,7 @@ enum FunctionType {
 enum ShapeType {
     case none
     case star
+    case circle
 }
 
 // Define a class that creates a mathmatical function
@@ -180,6 +181,16 @@ class MathFunction {
                     star.append(Point(x: nextX - 47, y: nextY - 15))
                     star.append(Point(x: nextX - 14, y: nextY - 20))
                     canvas.drawCustomShape(with: star)
+                } else if shapeType == .circle {
+                    
+                    canvas.fillColor = Color(hue: 0 + (Int(nextX) + canvas.width / 2) * 5,
+                                             saturation: 0 + (Int(nextX) + canvas.width / 2) * 10,
+                                             brightness: 100,
+                                             alpha: 100)
+                    canvas.drawShapesWithFill = true
+                    
+                    canvas.drawEllipse(at: Point(x: nextX, y: nextY), width: 50, height: 50)
+                    
                 }
                 
                 // Set the "new" last point, now that the line is drawn
