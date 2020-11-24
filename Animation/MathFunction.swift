@@ -28,6 +28,7 @@ enum ShapeType {
     case none
     case star
     case circle
+    case circleInCircle
 }
 
 // Define a class that creates a mathmatical function
@@ -111,7 +112,7 @@ class MathFunction {
             }
             
             // Start drawing after the first frame
-            if x > 0 && x < canvas.width {
+            if x > 0 && x < canvas.width + canvas.width / 10 {
                 
                 
                 
@@ -190,6 +191,28 @@ class MathFunction {
                     canvas.drawShapesWithFill = true
                     
                     canvas.drawEllipse(at: Point(x: nextX, y: nextY), width: 50, height: 50)
+                    
+                } else if shapeType == .circleInCircle {
+                    
+                    // Draw the "tube"
+                    canvas.drawShapesWithFill = true
+                    canvas.drawShapesWithBorders = true
+
+                    canvas.fillColor = Color(hue: 0, saturation: 0, brightness: 90, alpha: 10)
+                    
+                    canvas.drawEllipse(at: Point(x: nextX, y: nextY), width: 50, height: 50)
+
+                    // Draw the "fill" circle
+                    canvas.fillColor = Color(hue: 0 + (Int(nextX) + canvas.width / 2) * 5,
+                                             saturation: 0 + (Int(nextX) + canvas.width / 2) * 10,
+                                             brightness: 100,
+                                             alpha: 100)
+                    
+                    let xOffset = Degrees.random(in: -15...15)
+                    let yOffset = Degrees.random(in: -15...15)
+
+                    canvas.drawShapesWithBorders = false
+                    canvas.drawEllipse(at: Point(x: nextX + xOffset, y: nextY + yOffset), width: 10, height: 10)
                     
                 }
                 
