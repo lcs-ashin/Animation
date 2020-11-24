@@ -47,7 +47,7 @@ class FunctionArt2: NSObject, Sketchable {
         }
         
         // Initialize the smaller red bands
-        for i in 0...0{
+        for i in -2...25{
             
             // Create the function
 //            let newFunction = MathFunction(a: 20.0 - 2 * CGFloat(i),
@@ -61,12 +61,12 @@ class FunctionArt2: NSObject, Sketchable {
             
             let newFunction = MathFunction(a: 25.0,
                                            k: 1.0/8.0,
-                                           d: 25.0 * CGFloat(i) - CGFloat(canvas.width / 2),
-                                           c: 0,
+                                           d: 20.0 * CGFloat(i) - CGFloat(canvas.width / 2),
+                                           c: 30,
                                            canvas: canvas,
-                                           hue: 10 + Float(i),
+                                           hue: 120 + Float(i) * 5,
                                            type: .linearSine,
-                                           delayInSeconds: 5,
+                                           delayInSeconds: 0,
                                            a2: 25.0,
                                            k2: 8.0,
                                            d2: 25.0 * CGFloat(i) - CGFloat(canvas.width / 2),
@@ -96,14 +96,14 @@ class FunctionArt2: NSObject, Sketchable {
                                  brightness: 100,
                                  alpha: 50)
         
-        canvas.drawRectangle(at: Point(x: 0, y: 0),
-                             width: canvas.width,
-                             height: canvas.height)
+//        canvas.drawRectangle(at: Point(x: 0, y: 0),
+//                             width: canvas.width,
+//                             height: canvas.height)
         
         // What frame are we on?
         //        print(canvas.frameCount)
         
-        canvas.defaultLineWidth = 1
+        canvas.defaultLineWidth = 2
         
         // Set the origin to be the middle of the canvas
         canvas.translate(to: Point(x: canvas.width / 2, y: canvas.height / 2))
@@ -111,35 +111,47 @@ class FunctionArt2: NSObject, Sketchable {
         // Randomly change the vertical position
         // let newC = Int.random(in: -150...150)
         
-        // Draw the entire list of functions all at once
-        for x in 0...canvas.width {
+        // Update the position of all smaller red bands
+        for function in smallerRedBand {
             
-//            // Update the position of all large red bands
-//            for function in redBand {
+            // function.c = CGFloat(newC)
+            
+            // Gradually change the vertical stretch / compression
+//                function.a = 2 * sin(Degrees(canvas.frameCount).asRadians())
+            
+            function.update(on: canvas,
+                            usingInputValue: canvas.frameCount)
+        }
+        
+//        // Draw the entire list of functions all at once
+//        for x in 0...canvas.width {
+//
+////            // Update the position of all large red bands
+////            for function in redBand {
+////
+////                // function.c = CGFloat(newC)
+////
+////                // Gradually change the vertical stretch / compression
+////                function.a = 200.0 * sin(Degrees(canvas.frameCount).asRadians() / 0.5)
+////
+////                function.update(on: canvas,
+////                                usingInputValue: x)
+////            }
+//
+//            // Update the position of all smaller red bands
+//            for function in smallerRedBand {
 //
 //                // function.c = CGFloat(newC)
 //
 //                // Gradually change the vertical stretch / compression
-//                function.a = 200.0 * sin(Degrees(canvas.frameCount).asRadians() / 0.5)
+////                function.a = 2 * sin(Degrees(canvas.frameCount).asRadians())
 //
 //                function.update(on: canvas,
 //                                usingInputValue: x)
 //            }
-            
-            // Update the position of all smaller red bands
-            for function in smallerRedBand {
-                
-                // function.c = CGFloat(newC)
-                
-                // Gradually change the vertical stretch / compression
-//                function.a = 2 * sin(Degrees(canvas.frameCount).asRadians())
-                
-                function.update(on: canvas,
-                                usingInputValue: x)
-            }
-
-            
-        }
+//
+//
+//        }
     }
     
     
