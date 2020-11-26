@@ -27,28 +27,35 @@ class LinesFromCircles: NSObject, Sketchable {
         canvas = Canvas(width: 500, height: 500)
         
         // Set starting position
-        for _ in 1...49 {
-            
-            // Randomly pick a horizontal direction
-            var dx = 1
-            if Bool.random() == true {
-                dx *= -1
+        for x in stride(from: 50, through: 450, by: 100) {
+            for y in stride(from: 50, through: 450, by: 100) {
+               
+                
+                            
+                            // Randomly pick a horizontal direction
+                            var dx = 1
+                            if Bool.random() == true {
+                                dx *= -1
+                            }
+                            
+                            // Randomly pick a vertical direction
+                            var dy = 1
+                            if Bool.random() == true {
+                                dy *= -1
+                            }
+                            
+                            // Actually add the circles to the array
+                            circles.append(ElementOne(x: x,
+                                                      y: y,
+                                                      dx: dx,
+                                                      dy: dy,
+                                                      size: 25))
+                            
+                        
             }
-            
-            // Randomly pick a vertical direction
-            var dy = 1
-            if Bool.random() == true {
-                dy *= -1
-            }
-            
-            // Actually add the circles to the array
-            circles.append(ElementOne(x: Int.random(in: 0...canvas.width),
-                                        y: Int.random(in: 0...canvas.height),
-                                        dx: dx,
-                                        dy: dy,
-                                        size: 25))
-            
         }
+        
+        
        
       
         // Slow down the animation
@@ -60,7 +67,7 @@ class LinesFromCircles: NSObject, Sketchable {
     func draw() {
         
         // Black background
-        let black = Color.init(hue: 280, saturation: 100, brightness: 0, alpha: 25)
+//        let black = Color.init(hue: 280, saturation: 100, brightness: 0, alpha: 25)
         canvas.drawShapesWithFill = true
         canvas.drawShapesWithBorders = false
         canvas.fillColor = Color.white 
