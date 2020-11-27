@@ -49,7 +49,7 @@ class LinesFromCircles: NSObject, Sketchable {
                                                       y: y,
                                                       dx: dx,
                                                       dy: dy,
-                                                      size: 25))
+                                                      size: 50))
                             
                         
             }
