@@ -26,17 +26,17 @@ class FunctionArt5: NSObject, Sketchable {
         canvas = Canvas(width: 500, height: 500)
              
         // Initialize circles
-        for i in -3...3 {
+        for i in -1...1 {
             
             // Create the function
             let newFunction = MathFunction(a: 50,
-                                           k: 0.25 * CGFloat(i) * 1.6,
+                                           k: 0.25 * CGFloat(i) * 3,
                                            d: 0,
                                            c: 70 * CGFloat(i),
                                            canvas: canvas,
                                            hue: 300,
                                            type: .sine,
-                                           shapeType: .circleInCircle)
+                                           shapeType: .snake)
             
             // Add it to the list
             circle.append(newFunction)

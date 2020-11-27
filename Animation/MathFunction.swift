@@ -29,6 +29,7 @@ enum ShapeType {
     case star
     case circle
     case circleInCircle
+    case snake
 }
 
 // Define a class that creates a mathmatical function
@@ -213,6 +214,17 @@ class MathFunction {
 
                     canvas.drawShapesWithBorders = false
                     canvas.drawEllipse(at: Point(x: nextX + xOffset, y: nextY + yOffset), width: 10, height: 10)
+                    
+                } else if shapeType == .snake {
+                    
+                    canvas.drawShapesWithFill = true
+                    canvas.fillColor = Color(hue: 0, saturation: 0, brightness: 100, alpha: 60)
+                 
+                    if Int(nextX) % 5 == 0 {
+                    canvas.drawEllipse(at: Point(x: nextX, y: nextY), width: 20, height: 20)
+                    canvas.drawEllipse(at: Point(x: nextX, y: nextY - 10), width: 20, height: 20)
+                    canvas.drawEllipse(at: Point(x: nextX, y: nextY - 20), width: 20, height: 20)
+                    }
                     
                 }
                 
