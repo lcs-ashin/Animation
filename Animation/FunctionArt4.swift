@@ -30,12 +30,12 @@ class FunctionArt4: NSObject, Sketchable {
             
             // Create the function
             let newFunction = MathFunction(a: 50,
-                                           k: 0.25 * CGFloat(i) * 1.6,
+                                           k: 0.25 * CGFloat(i),
                                            d: 0,
                                            c: 70 * CGFloat(i),
                                            canvas: canvas,
                                            hue: 300,
-                                           type: .sine,
+                                           type: .linearSine,
                                            shapeType: .circleInCircle)
             
             // Add it to the list

@@ -26,9 +26,9 @@ class Sketch: NSObject {
 //    var currentDrawing = FunctionArt1()
 //    var currentDrawing = FunctionArt2()
 //    var currentDrawing = FunctionArt3()
-//    var currentDrawing = FunctionArt4()
+    var currentDrawing = FunctionArt4()
 //      var currentDrawing = FunctionArt5()
-          var currentDrawing = FunctionArt6()
+//          var currentDrawing = FunctionArt6()
 
  
 
