@@ -30,6 +30,7 @@ enum ShapeType {
     case circle
     case circleInCircle
     case snake
+    case heart
 }
 
 // Define a class that creates a mathmatical function
@@ -225,6 +226,33 @@ class MathFunction {
                     canvas.drawEllipse(at: Point(x: nextX, y: nextY - 10), width: 20, height: 20)
                     canvas.drawEllipse(at: Point(x: nextX, y: nextY - 20), width: 20, height: 20)
                     }
+                    
+                } else if shapeType == .heart {
+                    
+                    canvas.fillColor = Color(hue: .random(in: 0...40), saturation: 100, brightness: 100, alpha: 100)
+                    canvas.drawShapesWithBorders = false
+                    
+                    // first hearts
+                    canvas.drawEllipse(at: Point(x: nextX, y: nextY), width: 20, height: 20)
+                    canvas.drawEllipse(at: Point(x: nextX + 20, y: nextY), width: 20, height: 20)
+                    
+                    var heart: [Point] = []
+                    heart.append(Point(x: nextX - 10.1, y: nextY - 3))
+                    heart.append(Point(x: nextX + 10, y: nextY - 25))
+                    heart.append(Point(x: nextX + 30.1, y: nextY - 3))
+                    canvas.drawCustomShape(with: heart)
+                    
+                    // second hearts
+                    canvas.fillColor = Color(hue: .random(in: 40...80), saturation: 100, brightness: 100, alpha: 100)
+                    
+                    canvas.drawEllipse(at: Point(x: nextX - 100, y: nextY - 100), width: 20, height: 20)
+                    canvas.drawEllipse(at: Point(x: nextX + 20 - 100, y: nextY - 100), width: 20, height: 20)
+                    
+                    var heart2: [Point] = []
+                    heart2.append(Point(x: nextX - 10.1 - 100, y: nextY - 3 - 100))
+                    heart2.append(Point(x: nextX + 10 - 100, y: nextY - 25 - 100))
+                    heart2.append(Point(x: nextX + 30.1 - 100, y: nextY - 3 - 100))
+                    canvas.drawCustomShape(with: heart2)
                     
                 }
                 
