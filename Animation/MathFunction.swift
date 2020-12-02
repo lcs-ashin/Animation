@@ -220,7 +220,7 @@ class MathFunction {
                     
                     canvas.drawShapesWithFill = true
                     canvas.fillColor = Color(hue: 0, saturation: 0, brightness: 100, alpha: 60)
-                 
+                    canvas.borderColor = Color(hue: 0, saturation: 100, brightness: 80, alpha: 100)
                     if Int(nextX) % 5 == 0 {
                     canvas.drawEllipse(at: Point(x: nextX, y: nextY), width: 20, height: 20)
                     canvas.drawEllipse(at: Point(x: nextX, y: nextY - 10), width: 20, height: 20)
